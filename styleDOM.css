@@ -1,0 +1,189 @@
+/* Comment body out for the site to work */
+
+body {
+  text-align: center;
+  font-size: 32px;
+  background-color: yellow;
+  color: blue;
+}
+
+
+/* For deleting (hiding) an element*/
+
+.delete {
+  display: none;
+}
+
+
+/* for making the cursor a pointerhovering over the selected item */
+
+#list:hover {
+  cursor: pointer;
+}
+
+
+/* outline property creates nice frames around a div. See CSS tutorials and grid file for indepth */
+
+#div1 {
+  height: 100px;
+  width: 100px;
+  background-color: orange;
+  margin: auto;
+  border: 10px solid white;
+  outline: 10px dotted black;
+}
+
+
+/* Make something spin */
+
+#test {
+  height: 200px;
+  width: 200px;
+  background-color: rgba(85, 139, 203, 1);
+  margin: 0 auto;
+  position: relative;
+  animation: pulse 3s infinite;
+}
+
+@keyframes stretch {
+  0% {
+    background-color: rgba(247, 160, 211, 1);
+    transform: rotate(360deg);
+  }
+  100% {
+    background-color: rgba(122, 79, 176, 1);
+    transform: rotate(-360deg);
+  }
+}
+
+
+/* Make something slide */
+
+#test {
+  height: 200px;
+  width: 200px;
+  background-color: rgba(85, 139, 203, 1);
+  margin: 0 auto;
+  position: relative;
+  animation: nudge 3s linear infinite alternate;
+}
+
+@keyframes nudge {
+  0% {
+    transform: translate(150px, 0);
+  }
+  100% {
+    transform: translate(-150px, 0);
+  }
+}
+
+
+/* Centering a div inside a container (manual - had to p[ay arpoind with this) */
+
+#test {
+  height: 200px;
+  width: 200px;
+  background-color: rgba(85, 139, 203, 1);
+  margin: 0 auto;
+  position: relative;
+}
+
+#testTwo {
+  height: 50px;
+  width: 50px;
+  background-color: rgba(122, 79, 176, 1);
+  margin: 0 auto;
+  position: absolute;
+  top: 38%;
+  left: 25%;
+}
+
+
+/* Using CSS Grid Generator to create a template grid. NOTE - height: 100vh; means te grid will fill the whole page */
+
+.parent {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 200px;
+  grid-template-rows: 75px 1fr 75px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 5;
+}
+
+.div2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.div3 {
+  grid-area: 2 / 2 / 3 / 4;
+}
+
+.div4 {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.div5 {
+  grid-area: 3 / 1 / 4 / 5;
+}
+
+
+/* Makes the cursor turn into a point upon hover */
+
+#someID {
+  cursor: pointer;
+}
+
+
+/* /* CHEAT SHEET FROM MEDIUM: */
+
+
+/* Default positioning for all elements. */
+
+
+/* Puts element in normal flow.  */
+
+.someClass {
+  position: static;
+}
+
+
+/* Can be offset with top, right, bottom and left. */
+
+
+/* Offset relative to itself. */
+
+
+/* Creates relative-type positioning context for children. */
+
+.someClass {
+  position: relative;
+}
+
+
+/* Can be offset with top, right, bottom and left. */
+
+
+/* Offset relative to its nearest relative-type positioned parent. */
+
+
+/* Creates relative-type positioning context for children. */
+
+.someClass {
+  position: absolute;
+}
+
+
+/* Can be offset with top, right, bottom and left. */
+
+
+/* Offset relative to the viewport. */
+
+
+/* Creates relative-type positioning context for children. */
+
+.someClass {
+  position: fixed
+}

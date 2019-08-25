@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styleDOM.css">
+</head>
+
+<body>
+
+  <!-- Multi Page layout with navbar example -->
+  <nav>
+    <ul>
+      <li><strong>Home</strong></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="clients.html">Our Clients</a></li>
+      <li><a href="products.html">Our Products</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- hr tag segments contents with a line across the screen -->
+  <hr>
+
+  <!-- mark tag highlights text in between -->
+  <mark>example text</mark>
+
+  <!-- Buttons events -->
+  <div id="box" style="height:150px; width:150px; background-color:orange;"></div><br><br>
+
+  <div class="buttons">
+    <button id="boxGrow">Grow</button>
+    <button id="boxBlue">Blue</button>
+    <button id="boxFade">Fade</button>
+    <button id="boxRotate">Rotate</button>
+    <button id="secretMessage">Secret Message</button>
+    <div id="placeForSecretMessage"></div>
+    <button id="reset">Reset</button>
+  </div>
+  <br><br>
+
+  <!-- Password verification from input -->
+  <div class="log-in">
+    <form id="form">
+      <div>
+        <label for="name"><strong>Name:</strong></label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="password"><strong>Password:</strong></label>
+        <input type="text" id="password" name="password" required>
+      </div>
+    </form>
+    <button id="submit">Submit</button>
+    <div id="error"></div>
+  </div>
+  <br><br>
+
+  <!-- Appending text from input -->
+  <div class="input">
+    <p id="favFoods"><strong>List Your Favorite Foods</strong></p>
+    <input type="text" id="addItem">
+    <button id="favFoodsButton">Add</button>
+    <div class="output">
+      <ol></ol>
+    </div>
+  </div>
+  <br><br>
+
+  <!-- Tables - td flows down -->
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Job</th>
+      <th>Dates Employed</th>
+    </tr>
+    <tr>
+      <td>RS Investments</td>
+      <td>Trading Ops Head</td>
+      <td>2007-2015</td>
+    </tr>
+    <tr>
+      <td>CSFB</td>
+      <td>Restricted Stock Trading</td>
+      <td>1996-1999</td>
+    </tr>
+    <tr>
+      <td>Lehman</td>
+      <td>Trading Ops</td>
+      <td>1996-1999</td>
+    </tr>
+  </table>
+
+</body>
+
+<script type="text/javascript" src="DOM.js"></script>
+
+</html>

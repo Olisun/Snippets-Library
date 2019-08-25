@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Handlebars</title>
+  <link rel="stylesheet" href="handlebars.css">
+  <script src='handlebars-v4.1.2.js'></script>
+  <script id='greet' type='text/x-handlebars-template'>{{greeting}}</script>
+  <script id="ifHelper" type="text/x-handlebars-template">
+    {{#if opinion}}
+    <p>"The correct way to say 'GIF' is GIF!"
+      <p>
+        {{/if}}
+  </script>
+</head>
+
+<body>
+  <!-- CA Handlebars example 1  -->
+  <div class="container">
+    <h1>Handlebar Expressions</h1>
+    <div id="hello">
+    </div>
+    <div class="blinker">|</div>
+  </div>
+
+  <!-- CA Handlebars example 2  -->
+  <div class="bg">
+    <img class="bg-convo" src="https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/handlebars+if.svg">
+  </div>
+  <div id="debate">
+  </div>
+
+  <script src="handlebars.js" type="text/javascript"></script>
+</body>
+
+</html>
