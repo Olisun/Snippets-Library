@@ -1,4 +1,4 @@
-// Math Quiz
+Math Quiz
 
 let score = 0;
 

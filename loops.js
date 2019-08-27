@@ -1,3 +1,11 @@
+// Bootcamp. How do we print out every single student in Row 1?
+
+var studentsRow1 = ['Christopher', 'Daniel', 'Minori', 'Victoire', 'Selena', 'Darryl', 'Greyson', 'Raghav'];
+
+for (let i = 0; i < studentsRow1.length; i++) {
+  console.log(studentsRow1[i])
+}
+
 // Loops:
 // while loop - used for looping until a condition is satisfied and when it is unsure how many times the code should be in loop
 // for loop - used for looping until a condition is satisfied but it is used when you know how many times the code needs to be in loop

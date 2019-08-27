@@ -110,6 +110,16 @@ const eventAssignment = (thingy) => {
 
 singleItem.forEach(eventAssignment); // <-- must call .forEach for every eventAssignment
 
+// From Bootcamp
+// Targeting a keypress. user-input is the key you press. use-output is a place holder in HTML
+
+var userInput = document.getElementById("user-input");
+var userOutPut = document.getElementById('user-output')
+
+document.onkeyup = function(event) {
+  userOutPut.innerHTML = event.key; // event.key determines which key was pressed
+};
+
 
 // NOT FROM CODE ACADEMY
 // Targeting a specific keypress event. NOTE - ARROW FUNCTIONS MAY NOTE WORK! See CA Piano for full demo

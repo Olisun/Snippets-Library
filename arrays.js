@@ -1,3 +1,17 @@
+// Bootcamp. How do we print out every single student in Row 1?
+
+var studentsRow1 = ['Christopher', 'Daniel', 'Minori', 'Victoire', 'Selena', 'Darryl', 'Greyson', 'Raghav'];
+
+for (let i = 0; i < studentsRow1.length; i++) {
+  console.log(studentsRow1[i])
+}
+
+// Accessing the letters of a word in an array. First[] is the word and second[] is the letter of that word.
+
+const animals = ['cat', 'dog', 'snake', 'tiger', 'zebra', 'lion']
+console.log(animals[0][1])
+
+
 // THREE OF THE MOST USEFUL ARRAY METHODS (MEDIUM):
 // The Map Method - Creates a new array with the results of a function you assign for each array item.
 
