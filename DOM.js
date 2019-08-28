@@ -146,6 +146,14 @@ function checkKeyPressed2(e) {
   }
 };
 
+// Easier Keypress method (from Bootcamp). 
+
+document.onkeyup = function(event) {
+  var keypress = event.key;
+  if (keypress === 'd') {
+    alert('keypress works')
+  }
+}
 
 // WORKING CODE (Comment out above to view in Chrome)
 // Buttons events
