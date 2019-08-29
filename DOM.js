@@ -250,3 +250,14 @@ favFoodsButton.addEventListener('click', input = () => {
     li.classList.add('delete');
   });
 });
+
+// To change the style of a DOM element associated by a css class. This example is fired by a keypress
+
+var test = document.getElementById('letter4');
+
+document.onkeyup = function(event) {
+  var keypress = event.key;
+  if (keypress === 'd') {
+    test.classList.add('myStyle');
+  }
+}
