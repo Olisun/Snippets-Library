@@ -82,3 +82,7 @@ $(document).ready(function() {
 
   });
 });
+
+// To get the value of numbers using jquery:
+
+$(".number").value
