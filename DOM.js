@@ -33,6 +33,14 @@ const first = document.body.firstChild;
 first.innerHTML = 'I am the child!';
 first.parentNode.innerHTML = 'I am the parent and my inner HTML has been replaced!'
 
+// TEST
+
+keys.addEventListener('click', function event() {
+  if (event.target.matches('button')) {
+    // do this....
+  }
+})
+
 // Making something (aka img) change per te link after a click.
 
 myVar.onclick = () => {

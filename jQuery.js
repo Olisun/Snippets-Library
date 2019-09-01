@@ -1,3 +1,24 @@
+// Code that readys the DOM for js and jQuery. Basically the main function for the program. ALL CODE goes in there!
+// $ is an alias for jQuery
+
+$(document).ready(function() {
+
+});
+
+// To select HTML element and add css styling
+
+$(document).ready(function() {
+  $('body').addClass('jQ-test')
+});
+
+// To select HTML element and remove css styling
+
+$(document).ready(function() {
+  $('body').removeClass('jQ-test')
+    // You can select multiple classes and id's. Note - all the selectors go inside of ''. Can be even more selective with psuedo seletors (see learn jQuery)
+  $('h1, h2, #test1').addClass('jQ-test2')
+});
+
 // DOM click. (HTML below)
 // <h3 id="pbj">Peanut Butter Jelly</h3>
 // <h3 id="grilledcheese">Grilled Cheese</h3>

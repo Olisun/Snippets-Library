@@ -1,68 +1,8 @@
-body {
+.jQ-test {
+  background-color: aquamarine;
   text-align: center;
-  background-color: rgba(247, 202, 213, 1);
 }
 
-#test {
-  height: 200px;
-  width: 200px;
-  background-color: rgba(85, 139, 203, 1);
-  margin: 0 auto;
-  position: relative;
-  animation: nudge 3s linear infinite alternate;
+.jQ-test2 {
+  color: red;
 }
-
-@keyframes nudge {
-  0% {
-    transform: translate(150px, 0);
-  }
-  100% {
-    transform: translate(-150px, 0);
-  }
-}
-
-#testTwo {
-  height: 50px;
-  width: 50px;
-  background-color: rgba(122, 79, 176, 1);
-  margin: 0 auto;
-  position: absolute;
-  top: 38%;
-  left: 25%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  animation: pulse 0.5s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    background-color: rgba(92, 222, 223, 1);
-    transform: rotate(-360deg);
-  }
-  100% {
-    background-color: rgba(85, 139, 203, 1);
-    transform: rotate(360deg);
-  }
-}
-
-#list {
-  text-align: left;
-  margin-left: 48%;
-  margin-right: 48.5%;
-}
-
-#list:hover {
-  cursor: pointer;
-}
-
-
-/* RGB */
-
-
-/* $color1: rgba(92, 222, 223, 1);
-$color2: rgba(85, 139, 203, 1);
-$color3: rgba(122, 79, 176, 1);
-$color4: rgba(247, 160, 211, 1);
-$color5: rgba(247, 202, 213, 1); */
