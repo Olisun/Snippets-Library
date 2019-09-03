@@ -19,6 +19,18 @@ $(document).ready(function() {
   $('h1, h2, #test1').addClass('jQ-test2')
 });
 
+// To get the value if the selector is a number:
+
+$(document).ready(function() {
+  $(".number").value
+});
+
+// To display something from js to a specified selector in the DOM
+
+$(document).ready(function() {
+  $("#selector").text(thingYouWantDisplayed[numberIfArrayString])
+});
+
 // DOM click. (HTML below)
 // <h3 id="pbj">Peanut Butter Jelly</h3>
 // <h3 id="grilledcheese">Grilled Cheese</h3>
@@ -104,6 +116,17 @@ $(document).ready(function() {
   });
 });
 
-// To get the value of numbers using jquery:
+// For manipulating CSS and animate
 
-$(".number").value
+$(document).ready(function() {
+  // When the textPink button is pressed...
+  $("#textPink").on("click", function() {
+      // Change funText to pink.
+      $("#funText").css("color", "pink")
+    })
+    // When the boxGrow button is clicked... 
+  $("#boxGrow").on("click", function() {
+    // Increase the size of the box.
+    $("#box").animate({ height: "+=35px", width: "+=35px" }, "fast");
+  })
+});

@@ -269,3 +269,13 @@ document.onkeyup = function(event) {
     test.classList.add('myStyle');
   }
 }
+
+// To check if a div is a number
+
+var test = document.getElementById('someDiv')
+
+if (typeof test == 'number') {
+  alert('true')
+} else {
+  alert('false')
+};
