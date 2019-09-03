@@ -1,3 +1,42 @@
+/* This visually shows the layout of a page like bording. Works well for text */
+
+* {
+  background-color: rgba(255, 0, 0, .2);
+}
+
+* * {
+  background-color: rgba(0, 255, 0, .2);
+}
+
+* * * {
+  background-color: rgba(0, 0, 255, .2);
+}
+
+* * * * {
+  background-color: rgba(255, 0, 255, .2);
+}
+
+* * * * * {
+  background-color: rgba(0, 255, 255, .2);
+}
+
+* * * * * * {
+  background-color: rgba(255, 255, 0, .2);
+}
+
+* * * * * * * {
+  background-color: rgba(255, 0, 0, .2);
+}
+
+* * * * * * * * {
+  background-color: rgba(0, 255, 0, .2);
+}
+
+* * * * * * * * * {
+  background-color: rgba(0, 0, 255, .2);
+}
+
+
 /* Comment body out for the site to work */
 
 body {
