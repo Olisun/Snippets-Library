@@ -6,6 +6,32 @@ for (let i = 0; i < studentsRow1.length; i++) {
   console.log(studentsRow1[i])
 }
 
+// Bootcamp - using for loop to print out this list to the console.
+
+var files = [
+  "ashers_first_birthday.mov",
+  "derek_asleep_at_the_computer.jpg",
+  "joanne_fights_a_polar_bear.mp4",
+  "jimmy_road_rage.avi",
+  "raghav_skydiving.jpeg",
+  "magha_getting_his_black_belt.png",
+  "farley_winning_underground_street_race.mov",
+  "its_hard_to_come_up_with_file_names.gif",
+  "seriously_this_is_taking_too_long.mpg",
+  "i_wonder_how_many_of_these_i_should_have.png",
+  "probably_a_few_more.avi",
+  "nutmeg_is_clawing_my_sneakers_again.mp4",
+  "cat_i_will_destroy_you.gif",
+  "i_wish_we_had_a_dog.jpeg",
+  "stop_looking_at_me_like_that_nutmeg.mpeg",
+  "aww_i_cant_hate_you.png",
+  "omg_my_sneakers.avi",
+  "cat_you_are_the_worst.mp4"
+];
+
+for (let i = 0; i < files.length; i++) {
+  console.log(files[i])
+}
 // Loops:
 // while loop - used for looping until a condition is satisfied and when it is unsure how many times the code should be in loop
 // for loop - used for looping until a condition is satisfied but it is used when you know how many times the code needs to be in loop
