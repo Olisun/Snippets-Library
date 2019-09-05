@@ -13,9 +13,9 @@ console.log(maxNumber(11, 55));
 
 const random = Math.floor(Math.random() * 100) + 1;
 
-// Random Number generator (btw 1 and 10)
+// Random Number generator (btw min and max)
 
-let randomNumber = Math.floor(Math.random() * 10) + 1;
+var guess = Math.floor(Math.random() * (max - min + 1) + min);
 
 // Prompting a random number and returning an integer using Math.floor & Math.random properties
 
@@ -168,16 +168,16 @@ practice('Hello', practice2);
 
 function doHomework(subject, callback) {
   console.log(`Starting my ${subject} homework.`);
-  callback();  // allows the 'callback' parameter to be called back as a function
+  callback(); // allows the 'callback' parameter to be called back as a function
 }
 
-doHomework('math', function () {
+doHomework('math', function() {
   console.log('Finished my homework');
 });
 
 function whatsForDinner(options, ate) {
   console.log(options);
-  ate();  // allows the 'callback' parameter to be called back as a function
+  ate(); // allows the 'callback' parameter to be called back as a function
 }
 
 whatsForDinner('KFC', function ate() {
@@ -189,8 +189,8 @@ whatsForDinner('KFC', function ate() {
 function myFactoryFunction(type, breed, subBreed, forTheInnerFunction) {
   return {
     type: type, // ES6 allows us to remove the key. Just 'type,' OK
-    breed: breed,  // ES6 OK to just type 'breed,'
-    subBreed: subBreed,  // Same
+    breed: breed, // ES6 OK to just type 'breed,'
+    subBreed: subBreed, // Same
     action() {
       console.log(`I have a ${forTheInnerFunction}`); // Both works
       console.log('I have a ' + forTheInnerFunction); // Both works
@@ -201,14 +201,14 @@ function myFactoryFunction(type, breed, subBreed, forTheInnerFunction) {
 // Factory Functions return the object
 const testThis = myFactoryFunction('Doggie', 'Lab', 'Wiggly', 'Wiggly');
 testThis.action(); // To call the function inside use the variable you assigned.
-console.log(myFactoryFunction('Doggie', 'Lab', 'Wiggly', 'Wiggly'));  // returns the object
+console.log(myFactoryFunction('Doggie', 'Lab', 'Wiggly', 'Wiggly')); // returns the object
 
 // Constructor Functions - also used to create an object.  Notice the use of '.this' and 'new'
 
 function CreateDog(type, breed) {
   this.type = type;
   this.breed = breed;
-  this.action = function () {
+  this.action = function() {
     console.log('Bark')
   }
 };
@@ -219,7 +219,7 @@ console.log(newDog.action());
 
 // Another example with Constructor functions. Function name must start with a CAP!
 
-function Person(firstName, lastName) {  // <-- name of function starts with a capital and can't use arrow function.
+function Person(firstName, lastName) { // <-- name of function starts with a capital and can't use arrow function.
   this.firstName = firstName;
   this.lastName = lastName;
   this.fullName = () => {
@@ -257,8 +257,7 @@ try {
   const numbers = [1, 2, 3, 4];
   const count = countOccurrences(null, 1);
   console.log(count);
-}
-catch (e) {
+} catch (e) {
   console.log(e.message);
 }
 
