@@ -6,7 +6,7 @@ for (let i = 0; i < studentsRow1.length; i++) {
   console.log(studentsRow1[i])
 }
 
-// Bootcamp - using for loop to print out this list to the console.
+// Bootcamp - using for loop to print out this list to the console as spearate strings
 
 var files = [
   "ashers_first_birthday.mov",
@@ -32,6 +32,17 @@ var files = [
 for (let i = 0; i < files.length; i++) {
   console.log(files[i])
 }
+
+// Modulo for loop checking numbers evenly divided by. If the different numbers can be divided amounts each other (i.e. 5 and 10, there will be issues)
+
+for (let i = 0; i < 100; i++) {
+  if (i % 5 === 0) {
+    console.log(`Number divisible by 5: ${i}`)
+  } else if (i % 7 === 0) {
+    console.log(`Number divisible by 7: ${i}`)
+  }
+}
+
 // Loops:
 // while loop - used for looping until a condition is satisfied and when it is unsure how many times the code should be in loop
 // for loop - used for looping until a condition is satisfied but it is used when you know how many times the code needs to be in loop
