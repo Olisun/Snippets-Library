@@ -1,3 +1,35 @@
+// Bootcamp - Parsing Objects
+
+var customer = {
+  firstName: "John",
+  lastName: "Smith",
+  age: 25,
+  address: {
+    streetAddress: "21 2nd Street",
+    city: "New York",
+    state: "NY",
+    postalCode: "10021"
+  },
+  phoneNumber: [{
+    type: "home",
+    number: "212 555-1234"
+  }, {
+    type: "fax",
+    number: "646 555-4567"
+  }]
+};
+
+// Step 1: Log the First Name below using console.log
+console.log(customer.firstName)
+  // Step 2: Log the Last Name below using console.log
+console.log(customer.lastName)
+  // Step 3: Log the State of the Address below using console.log
+console.log(customer.address.state)
+  // Step 4: Log the Home Phone Number below using console.log
+console.log(customer.phoneNumber[0].number)
+  // Step 5: Log the Fax Number below using console.log
+console.log(customer.phoneNumber[0].number)
+
 // Example of .this in an object. 
 
 const animal = {
@@ -18,7 +50,7 @@ const person = {
   Name: 'Oliver Sun',
   Age: 47,
   Favorite_Animal: 'Wiggly',
-  Greeting: function () {
+  Greeting: function() {
     console.log('My name is ' + person.Name + ' and my favorite animal is ' + person.Favorite_Animal)
   },
 };
@@ -146,7 +178,7 @@ const animal = {
   type: 'doggie',
   breed: 'Labrador Retreiver',
   kind: 'Wiggly',
-  get breedKind() {  // Getter's have no value inside the ()
+  get breedKind() { // Getter's have no value inside the ()
     if (this.type && this.breed && this.kind) {
       return `I have a ${this.type} and she's a ${this.breed} aka a ${this.kind}!!`
     } else {
@@ -155,7 +187,7 @@ const animal = {
   }
 };
 
-console.log(animal.breedKind);  // when calling, don't use ()
+console.log(animal.breedKind); // when calling, don't use ()
 
 // Another getter example w/o if else.
 
@@ -189,18 +221,18 @@ const animal = {
   },
 };
 
-animal.newAge = 10;  // when calling, don't use ()
-console.log(animal.age)  // Output is 10. Notice call must be original key and not the method name like a getter
+animal.newAge = 10; // when calling, don't use ()
+console.log(animal.age) // Output is 10. Notice call must be original key and not the method name like a getter
 
-animal.newBreed = 'Doberman Pincher';  // when calling, don't use ()
-console.log(animal.breed);  // Output is 10. Notice call must be original key and not the method name like a getter.
+animal.newBreed = 'Doberman Pincher'; // when calling, don't use ()
+console.log(animal.breed); // Output is 10. Notice call must be original key and not the method name like a getter.
 
 const animal = {
   type: 'doggie',
   breed: 'Labrador Retreiver',
   kind: 'Wiggly',
   age: 9,
-  set newAge(value) {  // setters must have one value in the parameter.
+  set newAge(value) { // setters must have one value in the parameter.
     this.age = value;
   },
   set newBreed(someWord) {
@@ -244,8 +276,8 @@ console.log(robot._numOfSensors);
 function myFactoryFunction(type, breed, subBreed, forTheInnerFunction) {
   return {
     type: type, // ES6 allows us to remove the key. Just 'type,' OK
-    breed: breed,  // ES6 OK to just type 'breed,'
-    subBreed: subBreed,  // Same
+    breed: breed, // ES6 OK to just type 'breed,'
+    subBreed: subBreed, // Same
     action() {
       console.log(`I have a ${forTheInnerFunction}`); // Both works
       console.log('I have a ' + forTheInnerFunction); // Both works
@@ -256,14 +288,14 @@ function myFactoryFunction(type, breed, subBreed, forTheInnerFunction) {
 // Factory Functions return the object
 const testThis = myFactoryFunction('Doggie', 'Lab', 'Wiggly', 'Wiggly');
 testThis.action(); // To call the function inside use the variable you assigned.
-console.log(myFactoryFunction('Doggie', 'Lab', 'Wiggly', 'Wiggly'));  // returns the object
+console.log(myFactoryFunction('Doggie', 'Lab', 'Wiggly', 'Wiggly')); // returns the object
 
 // Constructor Functions - also used to create an object.  Notice the use of '.this' and 'new'
 
 function CreateDog(type, breed) {
   this.type = type;
   this.breed = breed;
-  this.action = function () {
+  this.action = function() {
     console.log('Bark')
   }
 };
@@ -454,8 +486,8 @@ const team = {
   }
 };
 
-team.addPlayer('Draymond', 'Green', 29);  // adds new items to the _players array.
-team.addGame('Trail Blazers', 118, 94);  // adds new items to the _games array.
+team.addPlayer('Draymond', 'Green', 29); // adds new items to the _players array.
+team.addGame('Trail Blazers', 118, 94); // adds new items to the _games array.
 console.log(team);
 
 // MOSH 
@@ -463,7 +495,7 @@ console.log(team);
 // The simplest way to create an object is using an object literal 
 const circle = {
   radius: 1,
-  draw: function () { }
+  draw: function() {}
 };
 
 // To create multiple objects with the same structure and behaviuor (methods), use a factory or a constructor. 
@@ -472,14 +504,14 @@ const circle = {
 function createCircle(radius) {
   return {
     radius,
-    draw: function () { }
+    draw: function() {}
   }
 }
 
 // Constructor function 
 function Circle(radius) {
   this.radius = radius;
-  this.draw = function () { }
+  this.draw = function() {}
 }
 
 // Every object has a "constructor" property which returns the function that was used to construct or create that object. 
@@ -511,32 +543,32 @@ Object.keys(circle);
 // To see if an object has a given property
 if ('location' in circle)
 
-  // Abstraction means hiding the complexity/details and showing only the essentials. 
-  // We can hide the details by using private members. Replace "this" with "let". 
+// Abstraction means hiding the complexity/details and showing only the essentials. 
+// We can hide the details by using private members. Replace "this" with "let". 
 
-  function Circle(radius) {
-    // Public member 
-    this.radius = radius;
+function Circle(radius) {
+  // Public member 
+  this.radius = radius;
 
-    // Private member                       
-    let defaultLocation = {};
-  }
+  // Private member                       
+  let defaultLocation = {};
+}
 
 // To define a getter/setter, use Object.defineProperty():
 
 Object.defineProperty(this, 'defaultLocation', {
-  get: function () { return defaultLocation; },
-  set: function (value) { defaultLocation = value; }
+  get: function() { return defaultLocation; },
+  set: function(value) { defaultLocation = value; }
 });
 
 // Use mixins to combine multiple objects 
 // and implement composition in JavaScript. 
 const canEat = {
-  eat: function () { }
+  eat: function() {}
 };
 
 const canWalk = {
-  walk: function () { }
+  walk: function() {}
 };
 
 function mixin(target, ...sources) {
@@ -545,7 +577,7 @@ function mixin(target, ...sources) {
   Object.assign(target, ...sources);
 }
 
-function Person() { }
+function Person() {}
 
 mixin(Person.prototype, canEat, canWalk);
 // From Mosh - Prototypes:
@@ -562,7 +594,7 @@ Object.getOwnPropertyDescriptor(obj, 'propertyName');
 
 // To set the attributes for a property:
 Object.defineProperty(obj, 'propertyName', {
-  configurable: false,    // cannot be deleted
+  configurable: false, // cannot be deleted
   writable: false,
   enumerable: false
 });
@@ -584,10 +616,10 @@ Object.getPrototypeOf(x) === Object.getPrototypeOf(y); // returns true
 // When dealing with large number of objects, it's better to put their
 // methods on their prototype. This way, a single instance of the methods
 // will be in the memory. 
-Circle.prototype.draw = function () { }
+Circle.prototype.draw = function() {}
 
 // To get the own/instance properties:
 Object.keys(obj);
 
 // To get all the properties (own + prototype): 
-for (let key in obj) { }
+for (let key in obj) {}

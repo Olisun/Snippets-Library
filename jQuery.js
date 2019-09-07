@@ -212,3 +212,27 @@ function countDown() {
 }
 
 countDown();
+
+// To Convert time to 00:00 format (Bootcamp solved)
+
+var time = 0;
+
+function count() {
+  time++;
+  var converted = timeConverter(time);
+  $("#display").text(converted);
+}
+
+function timeConverter(t) {
+  var minutes = Math.floor(t / 60);
+  var seconds = t - (minutes * 60);
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  if (minutes === 0) {
+    minutes = "00";
+  } else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  return minutes + ":" + seconds;
+}
