@@ -223,9 +223,9 @@ function count() {
   $("#display").text(converted);
 }
 
-function timeConverter(t) {
-  var minutes = Math.floor(t / 60);
-  var seconds = t - (minutes * 60);
+function clockFormatter(numToConvert) {
+  var minutes = Math.floor(numToConvert / 60);
+  var seconds = numToConvert - (minutes * 60);
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
@@ -233,6 +233,16 @@ function timeConverter(t) {
     minutes = "00";
   } else if (minutes < 10) {
     minutes = "0" + minutes;
-  }
+  } else if (minutes >= 10) {
+    minutes = "00" + minutes
+  };
   return minutes + ":" + seconds;
+}
+
+// Append array of strings to the DOM with jquery
+
+var avengers = ['Captain America', 'Iron Man', 'Thor', 'Dr. Strange', 'Spiderman', 'Captain Marvel'];
+
+for (var i = 0; i < avengers.length; i++) {
+  $('#for-buttons').append(avengers[i] + ', ');
 }

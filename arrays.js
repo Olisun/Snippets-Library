@@ -11,6 +11,13 @@ for (let i = 0; i < studentsRow1.length; i++) {
 const animals = ['cat', 'dog', 'snake', 'tiger', 'zebra', 'lion']
 console.log(animals[0][1])
 
+// Append array of strings to the DOM with jquery
+
+var avengers = ['Captain America', 'Iron Man', 'Thor', 'Dr. Strange', 'Spiderman', 'Captain Marvel'];
+
+for (var i = 0; i < avengers.length; i++) {
+  $('#for-buttons').append(avengers[i] + ', ');
+}
 
 // THREE OF THE MOST USEFUL ARRAY METHODS (MEDIUM):
 // The Map Method - Creates a new array with the results of a function you assign for each array item.

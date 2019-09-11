@@ -33,6 +33,14 @@ for (let i = 0; i < files.length; i++) {
   console.log(files[i])
 }
 
+// Append array of strings to the DOM with jquery and for loop
+
+var avengers = ['Captain America', 'Iron Man', 'Thor', 'Dr. Strange', 'Spiderman', 'Captain Marvel'];
+
+for (var i = 0; i < avengers.length; i++) {
+  $('#for-buttons').append(avengers[i] + ', ');
+}
+
 // Modulo for loop checking numbers evenly divided by. If the different numbers can be divided amounts each other (i.e. 5 and 10, there will be issues)
 
 for (let i = 0; i < 100; i++) {
