@@ -47,6 +47,30 @@ body {
 }
 
 
+/* Float 2 divs side-by-side. See Train Schedule fr full example */
+
+.container-for-current-time {
+  margin: auto;
+  padding-top: 5px;
+  margin-bottom: -10px;
+  text-align: center;
+}
+
+#current-time {
+  color: red;
+  width: 150px;
+  margin: auto;
+  float: left;
+}
+
+#current-time-dom {
+  float: right;
+  color: red;
+  width: 150px;
+  margin: auto;
+}
+
+
 /* For deleting (hiding) an element*/
 
 .delete {
