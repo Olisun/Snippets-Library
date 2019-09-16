@@ -1,3 +1,15 @@
+// Setting dynamic time using moment.js and setInteral (See Train HW for details). 
+
+var currentTimeDOM = $('#current-time-dom');
+
+var dynamicTime = function() {
+  var currentTime = moment();
+  var currentTimeFormatted = moment(currentTime).format('HH:mm:ss');
+  currentTimeDOM.text(currentTimeFormatted);
+}
+setInterval(dynamicTime, 1000);
+currentTimeDOM.text(dynamicTime);
+
 // Example function to pick the highest number
 
 function maxNumber(numberOne, numberTwo) {

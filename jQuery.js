@@ -239,6 +239,18 @@ function clockFormatter(numToConvert) {
   return minutes + ":" + seconds;
 }
 
+// Setting dynamic time using moment.js and setInteral (See Train HW for details). 
+
+var currentTimeDOM = $('#current-time-dom');
+
+var dynamicTime = function() {
+  var currentTime = moment();
+  var currentTimeFormatted = moment(currentTime).format('HH:mm:ss');
+  currentTimeDOM.text(currentTimeFormatted);
+}
+setInterval(dynamicTime, 1000);
+currentTimeDOM.text(dynamicTime);
+
 // Append array of strings to the DOM with jquery
 
 var avengers = ['Captain America', 'Iron Man', 'Thor', 'Dr. Strange', 'Spiderman', 'Captain Marvel'];
