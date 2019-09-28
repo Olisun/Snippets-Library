@@ -151,6 +151,17 @@ for (let i = 0; i < input.length; i = i + 1) {
 
   console.log("And if you don't know, now you know.")
 
+  // For-in Loops (loops through an object).
+
+  const futueDev = {
+    name: 'Oliver Sun',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery'],
+  }
+
+  for (x in futueDev) {
+    console.log(x) // <-- output are the keys
+  }
+
   // Using a For In Loop to iterate through a complex object.
 
   let spaceship = {

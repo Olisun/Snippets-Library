@@ -250,3 +250,10 @@ body {
 .someClass {
   position: fixed
 }
+
+
+/* For setting max height with jQuery's accordian */
+
+#accordion .ui-accordion-content {
+  max-height: 400px;
+}
