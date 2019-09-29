@@ -1,3 +1,14 @@
+// Random string generator from an array. Putting variable in the front (exp array) will get it to print the string as oppsed to the index.
+
+var array = ['warriors', 'mavs', 'lakers', 'heat', 'sixers', 'sun', 'thunder', 'rockerts'];
+var random = array[Math.floor(Math.random() * array.length)];
+var emptyArry = [];
+
+emptyArry.push(random); // <-- to push the random team into the empty array. 
+
+console.log(random); // <-- Will print random team. 
+console.log(emptyArry); // <-- Will print array with the random tean selected.
+
 // Bootcamp. How do we print out every single student in Row 1?
 
 var studentsRow1 = ['Christopher', 'Daniel', 'Minori', 'Victoire', 'Selena', 'Darryl', 'Greyson', 'Raghav'];

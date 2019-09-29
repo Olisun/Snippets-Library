@@ -29,6 +29,17 @@ const random = Math.floor(Math.random() * 100) + 1;
 
 var guess = Math.floor(Math.random() * (max - min + 1) + min);
 
+// Random string generator. Putting variable in the front (exp array) will get it to print the string as oppsed to the index.
+
+var array = ['warriors', 'mavs', 'lakers', 'heat', 'sixers', 'sun', 'thunder', 'rockerts'];
+var random = array[Math.floor(Math.random() * array.length)];
+var emptyArry = [];
+
+emptyArry.push(random); // <-- to push the random team into the empty array. 
+
+console.log(random); // <-- Will print random team. 
+console.log(emptyArry); // <-- Will print array with the random tean selected.
+
 // Prompting a random number and returning an integer using Math.floor & Math.random properties
 
 let question = prompt('Pick a number between 1 and 20.');
