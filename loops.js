@@ -1,3 +1,16 @@
+// Loops: Adding new stuff
+// Looping through an array, sorting it and pushing the output into a new array. 
+
+var array = ['zebras', 'dogs', 'cats', 'snakes', 'bears', 'lions'];
+var newArray = [];
+
+for (var i = 0; i < array.length; i++) {
+  newArray.push(array[i]);
+}
+
+newArray.sort()
+console.log(newArray);
+
 // Bootcamp. How do we print out every single student in Row 1?
 
 var studentsRow1 = ['Christopher', 'Daniel', 'Minori', 'Victoire', 'Selena', 'Darryl', 'Greyson', 'Raghav'];

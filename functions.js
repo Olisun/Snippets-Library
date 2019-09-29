@@ -1,3 +1,18 @@
+// Function which takes an array, sorts it and pushes the sorted items into a new array. 
+
+var array = ['zebras', 'dogs', 'cats', 'snakes', 'bears', 'lions'];
+var newArray = [];
+
+function arrayPractice() {
+  for (var i = 0; i < array.length; i++) {
+    newArray.push(array[i]);
+  }
+  newArray.sort()
+  console.log(newArray);
+};
+
+arrayPractice();
+
 // Setting dynamic time using moment.js and setInteral (See Train HW for details). 
 
 var currentTimeDOM = $('#current-time-dom');
