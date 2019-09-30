@@ -1,3 +1,11 @@
+// Test to check of a letter of string is included in a separate array of letters or stings. 
+
+var letterObjArray = ['i,', 'r', 'o', '_', 'm', 'a', 'n'];
+var letterGuess = 'a';
+var letterTest = letterObjArray.includes(letterGuess);
+
+console.log(letterTest); // <-- Output is true
+
 // Random string generator from an array. Putting variable in the front (exp array) will get it to print the string as oppsed to the index.
 
 var array = ['warriors', 'mavs', 'lakers', 'heat', 'sixers', 'sun', 'thunder', 'rockerts'];

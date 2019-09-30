@@ -37,7 +37,7 @@ function numberSort(...nums) {
 
 numberSort(55, 67, 145, 2, 74, 81, 1, 46, 6, 13);
 
-// Funciton to add numbers passed in as arguments using the Spread Operator.
+// Funciton that takes an array of numbers as an argument and then adding the sum of the array using the Spread Operator.
 
 function addNumbers(...numbers) {
   var total = 0;
