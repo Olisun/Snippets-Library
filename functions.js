@@ -13,7 +13,7 @@ function arrayPractice() {
 
 arrayPractice();
 
-// Function for taking any number of parameters and pushing them into an array, then sorting that array. Using the Spread Operator. Works for strings only.
+// Function for taking any number of arguments and pushing them into an array, then sorting that array. Using the Spread Operator. Works for strings only.
 
 function test(...param) {
   paramArray = [];
@@ -24,7 +24,7 @@ function test(...param) {
 
 test('cat', 'zebra', 'dog', 'elephants', 'bears', 'wigglys');
 
-// Funtions that takes in a bunch of numbers as parameters, puts them in an array, then sorts that array. This works for numbers.
+// Funtions that takes in a bunch of numbers as arguments, puts them in an array, then sorts that array. This works for numbers.
 
 function numberSort(...nums) {
   var numsArray = [];
@@ -36,6 +36,16 @@ function numberSort(...nums) {
 };
 
 numberSort(55, 67, 145, 2, 74, 81, 1, 46, 6, 13);
+
+// Funciton to add numbers passed in as arguments using the Spread Operator.
+
+function addNumbers(...numbers) {
+  var total = 0;
+  for (var number of numbers) total += number;
+  return total;
+};
+
+addNumbers(4, 16, 24, 44, 21, 6, 713, 67, 100);
 
 // Setting dynamic time using moment.js and setInteral (See Train HW for details). 
 
