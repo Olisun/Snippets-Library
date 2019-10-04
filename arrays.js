@@ -1,3 +1,14 @@
+// To compare two arrays at i (for homework!).
+
+const myArray = [6, 19, 20, 55];
+const yourArray = [19, 55, 81, 2];
+for (let i = 0; i < myArray.length; i++) {
+  for (let j = 0; j < yourArray.length; j++) {
+    let beta = myArray[i] - yourArray[i];
+    console.log(beta);
+  }
+}
+
 // Test to check of a letter of string is included in a separate array of letters or stings. 
 
 var letterObjArray = ['i,', 'r', 'o', '_', 'm', 'a', 'n'];
@@ -548,4 +559,24 @@ function getMax(array) {
   // return max; 
 
   return array.reduce((a, b) => (a > b) ? a : b);
+}
+
+// looping over 2 arrays (Stack Overflow)
+public static List < int > GetDifferentIndexes(byte[] arr1, byte[] arr2) {
+  // List to hold indexes of differences
+  List < int > lstDiffs = new List < int > ();
+
+  // Assure neither array is null and lengths match
+  if (arr1 ? .Length == arr2 ? .Length) {
+    // Loop through both arrays and check each value
+    for (int idx = 0; idx < arr1.Length; idx++) {
+      if (arr1[idx] != arr2[idx]) {
+        // Add index to list since values do not match
+        lstDiffs.Add(idx);
+      }
+    }
+  }
+
+  // Your list of different indexes
+  return (lstDiffs);
 }

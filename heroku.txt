@@ -1,0 +1,39 @@
+Use the following command to check if your machine has the heroku-cli installed:
+
+    $ heroku
+
+While in your application directory...
+
+    # Make sure you have a git tracker created for your application
+
+        $ git status
+        #   if you haven't tracked your application with git...  #
+        $ git init
+        
+    # Enter your Heroku credentials
+
+        $ heroku login
+
+    # Create a git remote for Heroku for your application
+
+        $ heroku create
+
+    # Copy the git remote URL that was returned to you. 
+
+        Should look something like:
+        git@heroku.com:awesome-possum-8408.git
+
+    # Link the remote directory to your local repository
+
+        $ git remote add heroku <your-heroku-remote-url-goes-here>
+
+    # Push your local repository/application to the Heroku remote/directory
+
+        $ git push heroku master
+
+    # Heroku takes care of the rest! Let's check out the application!
+
+        $ heroku open
+
+    # To be precise, when you push up to Heroku, Heroku will read your package.json to install the correct dependencies, and run the correct scripts once it's deployed.
+
