@@ -19,6 +19,28 @@ for (let i = 0; i < studentsRow1.length; i++) {
   console.log(studentsRow1[i])
 }
 
+// Funding the sum of an array passed into a function as an argument. 
+
+function calculateSum(...arguments) {
+  let accumulator = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    accumulator += arguments[i];
+  };
+  return accumulator;
+};
+
+// Funding the average of an array passed into a function as an argument. 
+
+calculateSum(3, 3, 3, 3, 3, 5, 5, 4, 5, 4, 4) // ==> 42
+
+function calculateAverage(...arguments) {
+  let accumulator = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    accumulator += arguments[i];
+  };
+  return accumulator / arguments.length;
+};
+
 // Bootcamp - using for loop to print out this list to the console as spearate strings
 
 var files = [

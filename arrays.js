@@ -100,6 +100,35 @@ const animalsSum = animals.reduce((accum, item) => accum + item);
 
 console.log(animalsSum); // output is dogcatbird (same as concat)
 
+// Finding length of arguments passed into a function. Spread operator forms an array.  
+
+function calculateSum(...arguments) {
+  console.log(arguments.length)
+}
+
+calculateSum(3, 3, 3, 3, 3, 5, 5, 4, 5, 4, 4) // ==> 10
+
+// Funding the sum of an array passed into a function as an argument. 
+
+function calculateSum(...arguments) {
+  let accumulator = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    accumulator += arguments[i];
+  };
+  return accumulator;
+};
+
+// Funding the average of an array passed into a function as an argument. 
+
+calculateSum(3, 3, 3, 3, 3, 5, 5, 4, 5, 4, 4) // ==> 42
+
+function calculateAverage(...arguments) {
+  let accumulator = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    accumulator += arguments[i];
+  };
+  return accumulator / arguments.length;
+};
 
 // OTHER ARRAY METHODS:
 // Sort Method - sorts alphabetically because it views data as strings.

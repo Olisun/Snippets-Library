@@ -47,6 +47,36 @@ function addNumbers(...numbers) {
 
 addNumbers(4, 16, 24, 44, 21, 6, 713, 67, 100);
 
+// Finding length of arguments passed into a function. Spread operator forms an array.  
+
+function calculateSum(...arguments) {
+  console.log(arguments.length)
+}
+
+calculateSum(3, 3, 3, 3, 3, 5, 5, 4, 5, 4, 4) // ==> 10
+
+// Funding the sum of an array passed into a function as an argument. 
+
+function calculateSum(...arguments) {
+  let accumulator = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    accumulator += arguments[i];
+  };
+  return accumulator;
+};
+
+// Funding the average of an array passed into a function as an argument. 
+
+calculateSum(3, 3, 3, 3, 3, 5, 5, 4, 5, 4, 4) // ==> 42
+
+function calculateAverage(...arguments) {
+  let accumulator = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    accumulator += arguments[i];
+  };
+  return accumulator / arguments.length;
+};
+
 // Setting dynamic time using moment.js and setInteral (See Train HW for details). 
 
 var currentTimeDOM = $('#current-time-dom');
