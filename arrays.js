@@ -1,10 +1,35 @@
+// How to filter objects in array in JavaScript. 
+
+const friends = [
+  { name: "Abby", age: 22 },
+  { name: "Boby", age: 16 },
+  { name: "Coel", age: 20 },
+  { name: "Dany", age: 15 }
+];
+
+friends.filter(friend => friend.age >= 18);
+
+// returns
+// [
+//     { name: 'Abby', age: 22 },
+//     { name: 'Coel', age: 20 },
+// ]
+
+// Finding the max or min /  highest or lowest numbers in an array. Use the spread operator. 
+
+var array = Math.max(...[1, 2, 3, 30, 5, 6, 7, 8]);
+var array2 = Math.min(...[1, 2, 3, 30, 5, 6, 7, 8]);
+
+console.log(array);
+console.log(array2);
+
 // To compare two arrays at i (for homework!).
 
 const myArray = [6, 19, 20, 55];
 const yourArray = [19, 55, 81, 2];
 for (let i = 0; i < myArray.length; i++) {
   for (let j = 0; j < yourArray.length; j++) {
-    let beta = myArray[i] - yourArray[i];
+    let beta = myArray[i] - yourArray[i]; // <-- [i] must be outer array [i]
     console.log(beta);
   }
 }
@@ -592,20 +617,19 @@ function getMax(array) {
 
 // looping over 2 arrays (Stack Overflow)
 public static List < int > GetDifferentIndexes(byte[] arr1, byte[] arr2) {
-  // List to hold indexes of differences
-  List < int > lstDiffs = new List < int > ();
+    // List to hold indexes of differences
+    List < int > lstDiffs = new List < int > ();
 
-  // Assure neither array is null and lengths match
-  if (arr1 ? .Length == arr2 ? .Length) {
-    // Loop through both arrays and check each value
-    for (int idx = 0; idx < arr1.Length; idx++) {
-      if (arr1[idx] != arr2[idx]) {
-        // Add index to list since values do not match
-        lstDiffs.Add(idx);
+    // Assure neither array is null and lengths match
+    if (arr1 ? .Length == arr2 ? .Length) {
+      // Loop through both arrays and check each value
+      for (int idx = 0; idx < arr1.Length; idx++) {
+        if (arr1[idx] != arr2[idx]) {
+          // Add index to list since values do not match
+          lstDiffs.Add(idx);
+        }
       }
     }
-  }
 
-  // Your list of different indexes
-  return (lstDiffs);
-}
+    // Your list of different indexes
+    return (lstDiffs);

@@ -1,3 +1,32 @@
+// How to filter objects in array in JavaScript. 
+
+const friends = [
+  { name: "Abby", age: 22 },
+  { name: "Boby", age: 16 },
+  { name: "Coel", age: 20 },
+  { name: "Dany", age: 15 }
+];
+
+friends.filter(friend => friend.age >= 18);
+
+// returns
+// [
+//     { name: 'Abby', age: 22 },
+//     { name: 'Coel', age: 20 },
+// ]
+
+// Looping through an object to get the values with Object.values. 
+
+const repository = {
+  id: 1,
+  language: "javascript",
+  public: true
+};
+
+for (const value of Object.values(repository)) {
+  console.log(value); // -- output are the values (as opp[sed to the keys). 
+}
+
 // Bootcamp - Parsing Objects
 
 var customer = {
