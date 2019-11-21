@@ -24,6 +24,21 @@ function test(...param) {
 
 test('cat', 'zebra', 'dog', 'elephants', 'bears', 'wigglys');
 
+// Remove items from an array
+
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+function arrayRemove(array, value) {
+  return array.filter(function(ele){
+      return ele != value;
+  });
+
+}
+
+var result = arrayRemove(array, 6);
+
+// result = [1, 2, 3, 4, 5, 7, 8, 9, 0]
+
 // Funtions that takes in a bunch of numbers as arguments, puts them in an array, then sorts that array. This works for numbers.
 
 function numberSort(...nums) {
@@ -377,6 +392,7 @@ function Deck(cards = []) {
       this.cards[randIndex] = tempCard;
     }
   }
+
   this.draw = function() {
     return this.cards.pop();
   }
@@ -385,6 +401,115 @@ function Deck(cards = []) {
     this.shuffle();
   }
 }
+
+var colorsArray = ['#61E294', '#7BCDBA', '#9799CA', '#BD93D8', '#B47AEA'];
+var backGround = document.getElementById('background-color');
+
+function pickColor() {
+  var randomColor = colorsArray[Math.floor(Math.random() * colorsArray.length)];
+  backGround.style.backgroundColor = randomColor;
+};
+
+setInterval(pickColor, 750);
+
+// ******************** BINARY SERACH (from class) ******************** //
+
+var arrayOne = [
+  1,
+  23,
+  43,
+  56,
+  77,
+  89,
+  211,
+  212,
+  789,
+  972,
+  1001,
+  4567,
+  4599,
+  83784
+];
+
+var arrayyTwo = [
+  1,
+  2,
+  4,
+  8,
+  9,
+  10,
+  13,
+  18,
+  23,
+  25,
+  30,
+  33,
+  36,
+  42,
+  43,
+  56,
+  57,
+  77,
+  89,
+  211,
+  212,
+  789,
+  972,
+  1001,
+  4567,
+  4599,
+  83784
+];
+// var result = binarySearch(arrayOne, 77);
+
+var result = binarySearch(arrayTwo, 77);
+
+
+console.log(result);
+
+function binarySearch(stuff, searchElement) {
+
+  // Set some starting values.
+  var currentElement;
+  var currentIndex;
+  var maxIndex = stuff.length - 1;
+  var minIndex = 0;
+
+  // This is the main loop.
+  while (minIndex <= maxIndex) {
+
+    // Get a position near the middle.
+    currentIndex = Math.floor((minIndex + maxIndex) / 2);
+
+    // Get that element.
+    currentElement = stuff[currentIndex];
+    console.log('Start Index: ', minIndex)
+    console.log('End Index: ', maxIndex)
+    console.log('Current Element', stuff[currentIndex])
+
+    // Test it.
+    if (currentElement < searchElement) {
+      // if it's less than we are looking for, look *above* this value.
+      minIndex = currentIndex + 1;
+
+    } else if (currentElement > searchElement) {
+
+      // If it's more than we are looking for, look *below* this value.
+      maxIndex = currentIndex - 1;
+    } else {
+      // We found it; return the index.
+      console.log('Current Index: ', currentIndex)
+      console.log('Current Element', stuff[currentIndex])
+      console.log(" ------- ")
+      return currentIndex;
+    }
+
+  }
+
+  return false;
+}
+
+// ******************** BINARY SERACH (from class) ******************** //
 
 // MOSH - Sum of arguments
 
@@ -427,3 +552,14 @@ function countOccurrences(array, searchElement) {
     return accumulator + occurrence;
   }, 0);
 }
+
+// Timers
+
+// repeat with the interval of 2 seconds
+let timerId = setInterval(() => alert('tick'), 2000);
+
+// after 5 seconds stop
+setTimeout(() => {
+  clearInterval(timerId);
+  alert('stop');
+}, 5000);

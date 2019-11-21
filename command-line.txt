@@ -152,3 +152,478 @@ h3. HELP
 | reset | Resets the terminal display |
 | man [command] | Show the help for 'command' |
 | whatis [command] | Gives a one-line description of 'command' |
+
+
+Shortcuts
+
+Tab	Auto-complete file and folder names
+Ctrl + A	Go to the beginning of the line you're currently typing on
+Ctrl + E	Go to the end of the line you're currently typing on
+Ctrl + U	Clear the line before the cursor
+Ctrl + K	Clear the line after the cursor
+Ctrl + W	Delete the word before the cursor
+Ctrl + T	Swap the last two characters before the cursor
+Esc + T	Swap the last two words before the cursor
+Ctrl + L	Clear the screen
+Ctrl + C	Kill whatever you're running
+Ctrl + D	Exit the current shell
+Option + →	Move cursor one word forward
+Option + ←	Move cursor one word backward
+Ctrl + F	Move cursor one character forward
+Ctrl + B	Move cursor one character backward
+Ctrl + Y	Paste whatever was cut by the last command
+Ctrl + Z	Puts whatever you're running into a suspended background process
+Ctrl + _	Undo the last command
+
+Basics
+
+/ (Forward Slash)	Top level directory
+. (Single Period)	Current directory
+.. (Double Period)	Parent directory
+~ (Tilde)	Home directory
+sudo [command]	Run command with the security privileges of the super user
+nano [file]	Opens the Terminal editor
+open [file]	Opens a file
+[command] -h	Get help about a command
+man [command]	Show the help manual of the command
+Change Directory
+cd	Home directory
+cd [folder]	Change directory, e.g. cd Documents
+cd ~	Home directory
+cd/	Root of the drive
+cd -	Previous directory or folder you last browsed
+pwd	Show your working directory
+cd..	Move up to the parent directory
+cd../..	Move up two levels
+List Directory Contents
+ls	Display the name of files and subdirectories in the directory
+ls -C	Force multi-column output of the listing
+ls -a	List all entries including those with .(period) and ..(double period)
+ls -1	Output the list of files in one entry per line format
+ls -F	Display a / (slash) immediately after each path that is a directory, * (asterisk) after executable programs or scripts, and @ after a symbolic link
+ls -S	Sort files or entries by size
+ls -l	List in a long format. Includes file mode, owner and group name, date and time file was modified, pathname, and more
+ls -lt	List the files sorted by time modified (most recent first)
+ls -lh	Long listing with human readable file sizes in KB, MB, or GB
+ls -lo	List the file names with size, owner, and flags
+ls -la	List detailed directory contents, including hidden files
+
+File Size and Disk Space
+
+du	List usage for each subdirectory and its contents
+du -sh [folder]	Human readable output of all files in a directory
+du -s	Display an entry for each specified file
+du -sk* | sort -nr	List files and folders, totaling the size including the subfolders. Replace sk* with sm* to list directories in MB
+df -h	Calculate your system's free disk space
+df -H	Calculate free disk space in powers of 1,000 (as opposed to 1,024)
+
+File and Directory Management
+
+mkdir <dir>	Create new folder named <dir>
+mkdir -p <dir>/<dir>	Create nested folders
+mkdir <dir1> <dir2> <dir3>	Create several folders at once
+mkdir "<dir>"	Create a folder with a space in the filename
+rmdir <dir>	Delete a folder (only works on empty folders)
+rm -R <dir>	Delete a folder and its contents
+touch <file>	Create a new file without any extension
+cp <file> <dir>	Copy a file to the folder
+cp <file> <newfile>	Copy a file to the current folder
+cp <file>~/<dir>/<newfile>	Copy a file to the folder and rename the copied file
+cp -R <dir> <"new dir">	Copy a folder to a new folder with spaces in the filename
+cp -i <file><dir>	Prompts you before copying a file with a warning overwrite message
+cp <file1> <file2> <file3>/Users/<dir>	Copy multiple files to a folder
+rm <file>	Delete a file (This deletes the file permanently; use with caution.)
+rm -i <file>	Delete a file only when you give confirmation
+rm -f <file>	Force removal without confirmation
+rm <file1> <file2> <file3>	Delete multiple files without any confirmation
+mv <file> <newfilename>	Move/rename
+mv <file> <dir>	Move a file to the folder, possibly by overwriting an existing file
+mv -i <file> <dir>	Optional -i flag to warn you before overwriting the file
+mv *.png ~/<dir>	Move all PNG files from current folder to a different folder
+
+Command History
+
+Ctrl + R	Search through previously used commands
+history n	Shows the previous commands you've typed. Add a number to limit to the last n items
+![value]	Execute the last command typed that starts with a value
+!!	Execute the last command typed
+
+Permissions
+
+ls -ld	Display the default permission for a home directory
+ls -ld/<dir>	Display the read, write, and access permission of a particular folder
+chmod 755 <file>	Change the permission of a file to 755
+chmod -R 600 <dir>	Change the permission of a folder (and its contents) to 600
+chown <user>:<group> <file>	Change the ownership of a file to user and group. Add -R to include folder contents
+
+Processes
+
+ps -ax	Output currently running processes. Here, a shows processes from all users and x shows processes that are not connected with the Terminal
+ps -aux	Shows all the processes with %cpu, %mem, page in, PID, and command
+top	Display live information about currently running processes
+top -ocpu -s 5	Display processes sorted by CPU usage, updating every 5 seconds
+top -o rsize	Sort top by memory usage
+kill PID	Quit process with ID <PID>. You'll see PID as a column in the Activity Monitor
+ps -ax | grep <appname>	Find a process by name or PID
+
+Network
+
+ping <host>	Ping host and display status
+whois <domain>	Output whois info for a domain
+curl -O <url/to/file>	Download file via HTTP, HTTPS, or FTP
+ssh <username>@<host>	Establish SSH connection to <host> with user <username>
+scp <file><user>@<host>:/remote/path	Copy <file> to a remote <host>
+
+Homebrew
+
+brew doctor	Check brew for potential problems
+brew install <formula>	Install a formula
+brew uninstall <formula>	Uninstall a formula
+brew list	List all the installed formulas
+brew search	Display available formulas for brewing
+brew upgrade	Upgrade all outdated and unpinned brews
+brew update	Fetch latest version of homebrew and formula
+brew cleanup	Remove older version of installed formula
+brew tap homebrew/cask	Tap the cask repository from GitHub
+brew cask list	List all installed casks
+brew cask install <cask>	Install the given cask
+brew cask uninstall <cask>	Uninstall the given cask
+
+Search
+
+find <dir> -name <"file">	Find all files named <file> inside <dir>. Use wildcards (*) to search for parts of filenames
+grep "<text>" <file>	Output all occurrences of <text> inside <file> (add -i for case insensitivity)
+grep -rl "<text>" <dir>	Search for all files containing <text> inside <dir>
+
+Output
+
+cat <file>	Output the content of <file>
+less <file>	Output the contents of <file> using the less command that supports pagination and more
+head <file>	Output the first 10 lines of <file>
+<cmd> > > <file>	Appends the output of <cmd> to <file>
+<cmd> > <file>	Direct the output of <cmd> into <file>
+<cmd1> | <cmd2>	Direct the output of <cmd1> to <cmd2>
+
+An A-Z Index of the Apple macOS command line (OS X bash)
+  afconvert Audio File Convert
+  afinfo    Audio File Info
+  afplay    Audio File Play
+  airport   Manage Apple AirPort
+  alias     Create an alias •
+  alloc     List used and free memory
+  apropos   Search the whatis database for strings
+  asr       Apple Software Restore
+  atsutil   Font registration system utility
+  awk       Find and Replace text within file(s)
+b
+  basename  Convert a full pathname to just a filename
+  bash      Bourne-Again SHell
+  bc        Arbitrary precision calculator language 
+  bg        Send to background •
+  bind      Set or display readline key and function bindings •
+  bless     Set volume bootability and startup disk options
+  break     Exit from a For, While, Until or Select loop •
+  builtin   Execute a shell builtin •
+  bzip2     Compress or decompress files
+c
+  caffeinate Prevent the system from sleeping
+  cal       Display a calendar
+  calendar  Reminder Service
+  caller    Return the context of a subroutine call •
+  cancel    Cancel print jobs
+  case      Conditionally perform a command •
+  cat       Concatenate and print (display) the content of files
+  cd        Change Directory •
+  chflags   Change a file or folder's flags
+  chgrp     Change group ownership
+  chmod     Change access permissions
+  chown     Change file owner and group
+  chroot    Run a command with a different root directory
+  cksum     Print CRC checksum and byte counts
+  clear     Clear terminal screen
+  cmp       Compare two files
+  comm      Compare two sorted files line by line
+  command   Run a command (not a function) •
+  complete  Edit a command completion [word/pattern/list] •
+  continue  Resume the next iteration of a loop •
+  cp        Copy one or more files to another location
+  cpio      Copy files to and from archives
+  cron      Daemon to execute scheduled commands
+  crontab   Schedule a command to run at a later date/time
+  csplit    Split a file into context-determined pieces
+  csrutil   Configure System Integrity Protection (SIP)
+ cupsfilter Convert a file to another format using cups filters
+  curl      Transfer data  from or to a server
+  cut       Divide a file into several parts
+d
+  date      Display or change the date & time
+  dc        Desk Calculator
+  dd        Data Duplicator - convert and copy a file, clone disks
+  declare   Declare variable & set attributes •
+  defaults  Set preferences, show hidden files
+  df        Display free disk space
+  diff      Display the differences between two files
+  diff3     Show differences among three files
+  dig       DNS lookup
+  dirname   Convert a full pathname to just a path
+  dirs      Display list of remembered directories •
+  diskutil  Disk utilities - Format, Verify, Repair
+  disown    Unbind a job from the current login session •
+  ditto     Copy files and folders
+  dot_clean Remove dot-underscore files
+  drutil    Interact with CD/DVD burners
+  dscacheutil  Query or flush the Directory Service/DNS cache
+  dseditgroup  Edit, create, manipulate, or delete groups
+  dsenableroot Enable root access
+  dsmemberutil View user and groups rights
+  dscl      Directory Service command line utility
+  du        Estimate file space usage
+e
+  echo      Display text on screen •
+  ed        A line-oriented text editor (edlin)
+  enable    Enable and disable builtin shell commands •
+  env       List or Set environment variables
+  eval      Evaluate several commands/arguments •
+  exec      Execute a command •
+  exit      Exit the shell •
+  execsnoop Snoop new process execution
+  expand    Convert tabs to spaces
+  expect    Programmed dialogue with interactive programs
+            Also see AppleScript
+  export    Set an environment variable •
+  expr      Evaluate expressions
+f
+  false     Do nothing, unsuccessfully
+  fc        Fix command (history)
+  fdisk     Partition table manipulator for Darwin UFS/HFS/DOS
+  fdesetup  FileVault configuration, list FileVault users
+  fg        Send job to foreground •
+  file      Determine file type
+  find      Search for files that meet a desired criteria
+  fmt       Reformat paragraph text
+  fold      Wrap text to fit a specified width
+  for       Loop command •
+  fsck      Filesystem consistency check and repair
+  fs_usage  Filesystem usage (process/pathname)
+  ftp       Internet file transfer program
+  function  Define Function Macros
+  fuser     List processes that have one or more files open
+g
+  GetFileInfo Get attributes of HFS+ files
+  getopt    Parse positional parameters
+  getopts   Parse positional parameters •
+  goto      Jump to label and continue execution
+  grep      Search file(s) for lines that match a given pattern
+  groups    Print group names a user is in
+  gzip      Compress or decompress files
+h
+  halt      Stop and restart the operating system
+  hash      Refresh the cached/remembered location of commands •
+  head      Display the first lines of a file
+  hdiutil   Manipulate iso disk images
+  history   Command History •
+  hostname  Print or set system name
+i
+  iconv     Convert the character set of a file
+  id        Print user and group names/id's
+  if        Conditionally perform a command •
+  ifconfig  Configure network interface parameters
+  iostat    Report CPU and i/o statistics
+  ipconfig  View and control IP configuration state
+  info      Help info
+  install   Copy files and set attributes
+  iosnoop   Snoop I/O events as they occur
+j
+  jobs      List active jobs •
+  join      Join lines on a common field
+k
+  kextfind  List kernel extensions
+  kextstat  Display status of loaded kernel extensions (kexts)
+  kextunload Terminate driver instances and unload kernel extensions.
+  kickstart Configure Apple Remote Desktop
+  kill      Kill a process by specifying its PID
+  killall   Kill processes by name
+l
+  l         List files in long format (ls -l)
+  last      Indicate last logins of users and ttys
+  launchctl Load or unload daemons/agents
+  ll        List files in long format, showing invisible files (ls -la)
+  less      Display output one screen at a time
+  let       Evaluate expression •
+  lipo      Convert a universal binary
+  ln        Make links between files (hard links, symbolic links)
+  local     Set a local (function) variable •
+  locate    Find files
+  logname   Print current login name
+  login     log into the computer
+  logout    Exit a login shell (bye) •
+  look      Display lines beginning with a given string
+  lp        Print files
+  lpr       Print files
+  lprm      Remove jobs from the print queue
+  lpstat    Printer status information
+  ls        List information about file(s)
+  lsregister Reset the Launch Services database
+  lsbom     List a bill of materials file
+  lsof      List open files
+m
+  man       Help manual
+  mdfind    Spotlight search
+  mdls      List the metadata attributes for a specified file
+  mdutil    Manage Spotlight metadata store
+  mkdir     Create new folder(s)
+  mkfifo    Make FIFOs (named pipes)
+  mkfile    Make a file
+  mktemp    Make a temporary file
+  more      Display output one screen at a time
+  mount     Mount a file system
+  mv        Move or rename files or directories
+n
+  nano      Simple text editor
+  nc/netcat Read and write data across networks
+  net       Manage network resources
+  netstat   Show network status
+  networksetup Network and System Preferences
+  nice      Set the priority of a command
+  nohup     Run a command immune to hangups
+  ntfs.util NTFS file system utility
+  nvram     Manipulate  firmware variables
+o
+  onintr    Control the action of a shell interrupt
+  open      Open a file/folder/URL/Application
+  opensnoop Snoop file opens as they occur
+  openssl   OpenSSL command line
+  osacompile Compile Applescript
+  osascript Execute AppleScript
+p
+  passwd    Modify a user password
+  paste     Merge lines of files
+  pbcopy    Copy data to the clipboard
+  pbpaste   Paste data from the Clipboard
+  pgrep     List processes by a full or partial name
+  ping      Test a network connection
+  pkill     Kill processes by a full or partial name
+  pkgbuild  Build a macOS Installer component package
+  pkgutil   Query and manipulate installed packages
+  plutil    Property list utility
+  pmset     Power Management settings
+  popd      Restore the previous value of the current directory •
+  pr        Convert text files for printing
+  printenv  List environment variables
+  printf    Format and print data •
+  ps        Process status
+  pushd     Save and then change the current directory
+  pwd       Print Working Directory •
+q
+  quota     Display disk usage and limits
+r
+  rcp       Copy files between machines
+  read      Read one line from standard input •
+  readonly  Mark a variable or function as read-only •
+  reboot    Stop and restart the system
+  ReportCrash Enable/Disable crash reporting
+  return    Exit a function •
+  rev       Reverse lines of a file
+  rm        Remove files
+  rmdir     Remove folder(s)
+  rpm       Remote Package Manager
+  rsync     Remote file copy - Sync file tree
+s
+  say       Convert text to audible speech
+  screen    Multiplex terminal, run remote shells via ssh
+  screencapture Capture screen image to file or disk
+  scselect  Switch between network locations
+  scutil    Manage system configuration parameters
+  sdiff     Merge two files interactively
+  security  Administer Keychains, keys, certificates and the Security framework
+  sed       Stream Editor
+  select    Generate a list of items •
+  serverinfo Server information
+  set       Set a shell variable = value •
+  setfile   Set attributes of HFS+ files
+  sharing   Create share points for afp, ftp and smb services
+  shasum    Print or Check SHA Checksums
+  shift     Shift positional parameters •
+  shopt     Set shell options •
+  shutdown  Shutdown or restart macOS
+  sips      Scriptable image processing system
+  sleep     Delay for a specified time
+  softwareupdate System software update tool
+  sort      Sort text files
+  source    Execute commands from a file •
+  spctl     Security assessment policy/Gatekeeper
+  split     Split a file into fixed-size pieces
+  sqlite3   SQL database (download history)
+  srm       Securely remove files or directories
+  stat      Display the status of a file
+  stop      Stop a job or process
+  su        Substitute user identity
+  sudo      Execute a command as another user
+  sum       Print a checksum for a file
+  suspend   Suspend execution of this shell •
+  sw_vers   Print macOS operating system version
+  sysctl    Get or set kernel state
+  system_profiler  Report system configuration
+  systemsetup Computer and display system settings
+t
+  tail      Output the last part of files
+  tar       Tape ARchiver
+  tccutil   Manage the privacy database
+  tcpdump   Dump traffic on a network
+  tee       Redirect output to multiple files
+  test      Condition evaluation •
+  textutil  Manipulate text files in various formats (Doc,html,rtf)
+  time      Measure Program Resource Use
+  times     Print shell & shell process times •
+  tmutil    Time Machine utility
+  top       Display process information
+  touch     Change file timestamps
+  tput      Set terminal-dependent capabilities, color, position
+  tr        Translate, squeeze, and/or delete characters
+  trap      Execute a command when the shell receives a signal •
+  traceroute Trace Route to Host
+  trimforce Enable TRIM commands on third-party drives
+  true      Do nothing, successfully
+  tty       Print filename of terminal on stdin
+  type      Describe a command •
+u
+  ufs.util  Mount/unmount UFS file system
+  ulimit    limit the use of system-wide resources •
+  umask     Users file creation mask
+  umount    Unmount a device
+  unalias   Remove an alias •
+  uname     Print the Darwin OS Kernel version / release / machine name
+  unexpand  Convert spaces to tabs
+  uniq      Uniquify files
+  units     Convert units from one scale to another
+  unset     Remove variable or function names •
+  until     Loop command •
+  uptime    Show how long system has been running
+  users     Print login names of users currently logged in
+  until     Execute commands (until error)
+  uuencode  Encode a binary file 
+  uudecode  Decode a file created by uuencode
+  uuidgen   Generate a Unique ID (UUID/GUID)
+  uucp      Unix to Unix copy
+v
+  vi        Text Editor
+w
+  w         Show who is logged on and what they are doing
+  wait      Wait for a process to complete •
+  wall      Write a message to users
+  wc        Print byte, word, and line counts
+  whatis    Search the whatis database for complete words
+  whereis   Locate a program
+  which     Locate a program file in the user's path
+  while     Loop command •
+  who       Print all usernames currently logged on
+  whoami    Print the current user id and name (`id -un')
+  write     Send a message to another user
+x
+  xargs     Execute utility - passing arguments
+  xattr     Display and manipulate extended attributes
+  xcode-select --install  Install the command line developer tools
+ youtube-dl Download video
+  yes       Print a string until interrupted
+  zip       Package and compress (archive) files.
+  !!        Run the last command again

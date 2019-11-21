@@ -412,3 +412,15 @@ for (var i = 0; i < avengers.length; i++) {
 // To target radio buttons (see Trivia Game)
 
 var question1 = document.avengersQuiz.question1.value;
+
+// Function to have the background color flicker. 
+
+var colorsArray = ['#61E294', '#7BCDBA', '#9799CA', '#BD93D8', '#B47AEA'];
+var backGround = document.getElementById('background-color');
+
+function pickColor() {
+  var randomColor = colorsArray[Math.floor(Math.random() * colorsArray.length)];
+  backGround.style.backgroundColor = randomColor;
+};
+
+setInterval(pickColor, 750);

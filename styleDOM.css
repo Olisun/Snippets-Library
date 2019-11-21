@@ -46,6 +46,13 @@ body {
   color: blue;
 }
 
+/* To get divs to align across the screen evenly */
+
+.exp-Pokidex-cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
 /* Float 2 divs side-by-side. See Train Schedule fr full example */
 
@@ -70,20 +77,17 @@ body {
   margin: auto;
 }
 
-
 /* For deleting (hiding) an element*/
 
 .delete {
   display: none;
 }
 
-
 /* for making the cursor a pointerhovering over the selected item */
 
 #list:hover {
   cursor: pointer;
 }
-
 
 /* outline property creates nice frames around a div. See CSS tutorials and grid file for indepth */
 
@@ -95,7 +99,6 @@ body {
   border: 10px solid white;
   outline: 10px dotted black;
 }
-
 
 /* Make something spin */
 
@@ -119,7 +122,6 @@ body {
   }
 }
 
-
 /* Make something slide */
 
 #test {
@@ -140,7 +142,6 @@ body {
   }
 }
 
-
 /* Centering a div inside a container (manual - had to p[ay arpoind with this) */
 
 #test {
@@ -160,7 +161,6 @@ body {
   top: 38%;
   left: 25%;
 }
-
 
 /* Using CSS Grid Generator to create a template grid. NOTE - height: 100vh; means te grid will fill the whole page */
 
@@ -199,61 +199,62 @@ body {
   cursor: pointer;
 }
 
-
 /* /* CHEAT SHEET FROM MEDIUM: */
-
-
 /* Default positioning for all elements. */
-
-
 /* Puts element in normal flow.  */
 
 .someClass {
   position: static;
 }
 
-
 /* Can be offset with top, right, bottom and left. */
-
-
 /* Offset relative to itself. */
-
-
 /* Creates relative-type positioning context for children. */
 
 .someClass {
   position: relative;
 }
 
-
 /* Can be offset with top, right, bottom and left. */
-
-
 /* Offset relative to its nearest relative-type positioned parent. */
-
-
 /* Creates relative-type positioning context for children. */
 
 .someClass {
   position: absolute;
 }
 
-
 /* Can be offset with top, right, bottom and left. */
-
-
 /* Offset relative to the viewport. */
-
-
 /* Creates relative-type positioning context for children. */
 
 .someClass {
   position: fixed
 }
 
-
 /* For setting max height with jQuery's accordian */
 
 #accordion .ui-accordion-content {
   max-height: 400px;
+}
+
+/* Good hover effect */
+
+.Pokecard img {
+  transition: all ease 500ms;
+}
+
+.Pokicard img:hover {
+  transform: scale(1.25);
+  opacity: 0.75;
+}
+/* Another good hover effect From class. See 17-react (activity 05 for details) */
+
+.crystal:hover {
+  transform: rotate(135deg) scale(1.2);
+  transition: .5s all;
+}
+
+.crystal:active {
+  transform: rotate(135deg) scale(1);
+  transition: .2s all;
 }

@@ -34,6 +34,17 @@ for (let i = 0; i < myArray.length; i++) {
   }
 }
 
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+function arrayRemove(array, value) {
+  return array.filter(function(ele){
+      return ele != value;
+  });
+
+}
+
+var result = arrayRemove(array, 6);
+
 // Test to check of a letter of string is included in a separate array of letters or stings. 
 
 var letterObjArray = ['i,', 'r', 'o', '_', 'm', 'a', 'n'];
