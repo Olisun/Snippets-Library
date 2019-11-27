@@ -20,7 +20,7 @@ class Dog {
 
 const wiggly = new Dog('Wiggly');
 console.log(wiggly.name);  // output is Wiggly 
-console.log(wiggly.behavior);  // out is walking time
+console.log(wiggly.behavior);  // output is walking time
 console.log(wiggly.incrementBehavior);
 
 // Constructor creates new obect - Surgeon {name: "Oliver", department: "Settlements"}

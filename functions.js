@@ -104,7 +104,7 @@ var dynamicTime = function() {
 setInterval(dynamicTime, 1000);
 currentTimeDOM.text(dynamicTime);
 
-// Example function to pick the highest number
+// Example function to pick the highest number btw 2.
 
 function maxNumber(numberOne, numberTwo) {
   if (numberOne > numberTwo) {
@@ -122,6 +122,13 @@ const random = Math.floor(Math.random() * 100) + 1;
 // Random Number generator (btw min and max)
 
 var guess = Math.floor(Math.random() * (max - min + 1) + min);
+
+// This function returns a random item from a list (an array).
+
+const choice = (array) => {
+  let randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex]
+};
 
 // Random string generator. Putting variable in the front (exp array) will get it to print the string as oppsed to the index.
 

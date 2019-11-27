@@ -1,3 +1,10 @@
+ // Array.from turns numberOfBoxes from an object to an array so we can map.
+ static defaultProps = {
+  numberOfBoxes: 18
+}
+
+const boxes = Array.from({ length: numberOfBoxes }).map(() => (<Box />));
+
 // How to filter objects in array in JavaScript. 
 
 const friends = [
@@ -37,8 +44,8 @@ for (let i = 0; i < myArray.length; i++) {
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 function arrayRemove(array, value) {
-  return array.filter(function(ele){
-      return ele != value;
+  return array.filter(function (ele) {
+    return ele != value;
   });
 
 }
@@ -52,6 +59,13 @@ var letterGuess = 'a';
 var letterTest = letterObjArray.includes(letterGuess);
 
 console.log(letterTest); // <-- Output is true
+
+// This function returns a random item from a list (an array).
+
+const choice = (array) => {
+  let randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex]
+};
 
 // Random string generator from an array. Putting variable in the front (exp array) will get it to print the string as oppsed to the index.
 
@@ -463,7 +477,7 @@ for (let i = 0; i < myArray.length; i++) {
 // Another nested Array example where you find the common elements and push them to a new array.
 
 const bobsFollowers = ['Steve', 'John', 'Andy', 'James'];
-const tinasFollowers = ['Steve', 'Jeff', 'Andy', ];
+const tinasFollowers = ['Steve', 'Jeff', 'Andy',];
 const mutualFollowers = [];
 
 for (let i = 0; i < bobsFollowers.length; i = i + 1) {
@@ -628,19 +642,19 @@ function getMax(array) {
 
 // looping over 2 arrays (Stack Overflow)
 public static List < int > GetDifferentIndexes(byte[] arr1, byte[] arr2) {
-    // List to hold indexes of differences
-    List < int > lstDiffs = new List < int > ();
+  // List to hold indexes of differences
+  List < int > lstDiffs = new List<int>();
 
-    // Assure neither array is null and lengths match
-    if (arr1 ? .Length == arr2 ? .Length) {
-      // Loop through both arrays and check each value
-      for (int idx = 0; idx < arr1.Length; idx++) {
-        if (arr1[idx] != arr2[idx]) {
-          // Add index to list since values do not match
-          lstDiffs.Add(idx);
-        }
+  // Assure neither array is null and lengths match
+  if (arr1 ? .Length == arr2 ? .Length) {
+    // Loop through both arrays and check each value
+    for (int idx = 0; idx < arr1.Length; idx++) {
+      if (arr1[idx] != arr2[idx]) {
+        // Add index to list since values do not match
+        lstDiffs.Add(idx);
       }
     }
+  }
 
-    // Your list of different indexes
-    return (lstDiffs);
+  // Your list of different indexes
+  return (lstDiffs);
