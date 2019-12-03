@@ -49,11 +49,11 @@ myVar.onclick = () => {
 
 // add.EventListener & removeEventListener examples (using same variable).
 
-myVar.addEventListener('click', function() {
+myVar.addEventListener('click', function () {
   // function code.....
 })
 
-myVar.removeEventListener('click', function() {
+myVar.removeEventListener('click', function () {
   // function code.....
 })
 
@@ -124,7 +124,7 @@ singleItem.forEach(eventAssignment); // <-- must call .forEach for every eventAs
 var userInput = document.getElementById("user-input");
 var userOutPut = document.getElementById('user-output')
 
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
   userOutPut.innerHTML = event.key; // event.key determines which key was pressed
 };
 
@@ -156,7 +156,7 @@ function checkKeyPressed2(e) {
 
 // Easier Keypress method (from Bootcamp). 
 
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
   var keypress = event.key;
   if (keypress === 'd') {
     alert('keypress works')
@@ -263,7 +263,7 @@ favFoodsButton.addEventListener('click', input = () => {
 
 var test = document.getElementById('letter4');
 
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
   var keypress = event.key;
   if (keypress === 'd') {
     test.classList.add('myStyle');
@@ -324,23 +324,23 @@ var gameOver = 'GAME OVER';
 // Function to append 3 strings to the DOM in sequential order
 
 function helloWord() {
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').append(firstGreeting)
   }, 1000 * 1)
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').text('');
   }, 1000 * 2)
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').append(secondGreeting)
   }, 1000 * 3)
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').text('');
   }, 1000 * 4)
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').append(thirdGreeting)
   }, 1000 * 5)
 }
@@ -350,7 +350,7 @@ helloWord();
 // Count down timer
 
 function countDown() {
-  var wiggly = setInterval(function() {
+  var wiggly = setInterval(function () {
     $('#test2').text(counter)
     counter--
     if (counter === 0) {
@@ -393,7 +393,7 @@ function clockFormatter(numToConvert) {
 
 var currentTimeDOM = $('#current-time-dom');
 
-var dynamicTime = function() {
+var dynamicTime = function () {
   var currentTime = moment();
   var currentTimeFormatted = moment(currentTime).format('HH:mm:ss');
   currentTimeDOM.text(currentTimeFormatted);
@@ -424,3 +424,24 @@ function pickColor() {
 };
 
 setInterval(pickColor, 750);
+
+// 3D Cube Transformation
+
+var box = document.querySelector(".box");
+var radioGroup = document.querySelector(".radio-group");
+var currentClass = "";
+
+changeSide = () => {
+  var checkedRadio = radioGroup.querySelector(":checked");
+  var showClass = "show-" + checkedRadio.value;
+  if (currentClass) {
+    box.classList.remove(currentClass);
+  }
+  box.classList.add(showClass);
+  currentClass = showClass;
+}
+
+changeSide();
+
+radioGroup.addEventListener("change", changeSide);
+

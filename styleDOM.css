@@ -46,6 +46,7 @@ body {
   color: blue;
 }
 
+
 /* To get divs to align across the screen evenly */
 
 .exp-Pokidex-cards {
@@ -53,6 +54,7 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
 
 /* Float 2 divs side-by-side. See Train Schedule fr full example */
 
@@ -77,17 +79,20 @@ body {
   margin: auto;
 }
 
+
 /* For deleting (hiding) an element*/
 
 .delete {
   display: none;
 }
 
+
 /* for making the cursor a pointerhovering over the selected item */
 
 #list:hover {
   cursor: pointer;
 }
+
 
 /* outline property creates nice frames around a div. See CSS tutorials and grid file for indepth */
 
@@ -99,6 +104,7 @@ body {
   border: 10px solid white;
   outline: 10px dotted black;
 }
+
 
 /* Make something spin */
 
@@ -122,6 +128,7 @@ body {
   }
 }
 
+
 /* Make something slide */
 
 #test {
@@ -142,6 +149,7 @@ body {
   }
 }
 
+
 /* Centering a div inside a container (manual - had to p[ay arpoind with this) */
 
 #test {
@@ -161,6 +169,7 @@ body {
   top: 38%;
   left: 25%;
 }
+
 
 /* Using CSS Grid Generator to create a template grid. NOTE - height: 100vh; means te grid will fill the whole page */
 
@@ -199,43 +208,65 @@ body {
   cursor: pointer;
 }
 
+
 /* /* CHEAT SHEET FROM MEDIUM: */
+
+
 /* Default positioning for all elements. */
+
+
 /* Puts element in normal flow.  */
 
 .someClass {
   position: static;
 }
 
+
 /* Can be offset with top, right, bottom and left. */
+
+
 /* Offset relative to itself. */
+
+
 /* Creates relative-type positioning context for children. */
 
 .someClass {
   position: relative;
 }
 
+
 /* Can be offset with top, right, bottom and left. */
+
+
 /* Offset relative to its nearest relative-type positioned parent. */
+
+
 /* Creates relative-type positioning context for children. */
 
 .someClass {
   position: absolute;
 }
 
+
 /* Can be offset with top, right, bottom and left. */
+
+
 /* Offset relative to the viewport. */
+
+
 /* Creates relative-type positioning context for children. */
 
 .someClass {
   position: fixed
 }
 
+
 /* For setting max height with jQuery's accordian */
 
 #accordion .ui-accordion-content {
   max-height: 400px;
 }
+
 
 /* Good hover effect */
 
@@ -247,6 +278,8 @@ body {
   transform: scale(1.25);
   opacity: 0.75;
 }
+
+
 /* Another good hover effect From class. See 17-react (activity 05 for details) */
 
 .crystal:hover {
@@ -259,17 +292,20 @@ body {
   transition: .2s all;
 }
 
+
 /* Flipping a card or any div (see My_React_Practice) */
 
 .card-container, .front, .back {
   width: 20rem;
   height: 20rem;
 }
+
 .card-container {
   margin: 5rem;
   position: relative;
   perspective: 75rem;
 }
+
 .front, .back {
   box-sizing: border-box;
   padding: 2rem;
@@ -291,16 +327,130 @@ body {
 .back {
   transform: rotateY(180deg);
 }
+
 .card-container:hover .front {
   transform: rotateY(-180deg);
 }
+
 .card-container:hover .back {
   transform: rotateY(0deg);
 }
 
-/* front side bg is green gradient */ .front {
+
+/* front side bg is green gradient */
+
+.front {
   background-image: linear-gradient(to right bottom, #2ecc71, #229955);
 }
-/* back side bg is orange gradient */ .back {
+
+
+/* back side bg is orange gradient */
+
+.back {
   background-image: linear-gradient(to right bottom, #f1c40f, #e67e22);
+}
+
+
+/* 3D Cube Transformation */
+
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 600px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+.box.show-front {
+  transform: translateZ(-100px) rotateY(0deg);
+}
+
+.box.show-right {
+  transform: translateZ(-100px) rotateY(-90deg);
+}
+
+.box.show-back {
+  transform: translateZ(-100px) rotateY(-180deg);
+}
+
+.box.show-left {
+  transform: translateZ(-100px) rotateY(90deg);
+}
+
+.box.show-top {
+  transform: translateZ(-100px) rotateX(-90deg);
+}
+
+.box.show-bottom {
+  transform: translateZ(-100px) rotateX(90deg);
+}
+
+.box__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.box__face--front {
+  background: hsla( 0, 100%, 50%, 0.7);
+}
+
+.box__face--right {
+  background: hsla( 60, 100%, 50%, 0.7);
+}
+
+.box__face--back {
+  background: hsla(120, 100%, 50%, 0.7);
+}
+
+.box__face--left {
+  background: hsla(180, 100%, 50%, 0.7);
+}
+
+.box__face--top {
+  background: hsla(240, 100%, 50%, 0.7);
+}
+
+.box__face--bottom {
+  background: hsla(300, 100%, 50%, 0.7);
+}
+
+.radio-group {
+  text-align: center;
+}
+
+.box__face--front {
+  transform: rotateY(0deg) translateZ(100px);
+}
+
+.box__face--right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.box__face--back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.box__face--left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.box__face--top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.box__face--bottom {
+  transform: rotateX(-90deg) translateZ(100px);
 }

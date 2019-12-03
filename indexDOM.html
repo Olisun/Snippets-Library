@@ -95,6 +95,42 @@
     </tr>
   </table>
 
+  {% comment %} 3D Cube Transformation {% endcomment %}
+
+  <div class="scene">
+  <div class="box">
+    <div class="box__face box__face--front">FRONT</div>
+    <div class="box__face box__face--back">BACK</div>
+    <div class="box__face box__face--right">RIGHT</div>
+    <div class="box__face box__face--left">LEFT</div>
+    <div class="box__face box__face--top">TOP</div>
+    <div class="box__face box__face--bottom">BOTTOM</div>
+  </div>
+</div>
+
+<p class="radio-group">
+  <label>
+    <input type="radio" name="rotate-box-side" value="front" checked /> Front
+  </label>
+   <label>
+    <input type="radio" name="rotate-box-side" value="right" /> Right
+  </label>
+   <label>
+    <input type="radio" name="rotate-box-side" value="back" /> Back
+  </label>
+   <label>
+    <input type="radio" name="rotate-box-side" value="left" /> Left
+  </label>
+   <label>
+    <input type="radio" name="rotate-box-side" value="top" /> Top
+  </label>
+   <label>
+    <input type="radio" name="rotate-box-side" value="bottom" /> Bottom
+  </label>
+</p>
+
+
+
 </body>
 
 <script type="text/javascript" src="DOM.js"></script>
