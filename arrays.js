@@ -168,9 +168,9 @@ function calculateSum(...arguments) {
   return accumulator;
 };
 
-// Funding the average of an array passed into a function as an argument. 
-
 calculateSum(3, 3, 3, 3, 3, 5, 5, 4, 5, 4, 4) // ==> 42
+
+// Funding the average of an array passed into a function as an argument. 
 
 function calculateAverage(...arguments) {
   let accumulator = 0;
@@ -531,6 +531,55 @@ const eventAssignment = (thingy) => {
 };
 
 singleItem.forEach(eventAssignment);
+
+// Find sum of numbers in a nested array.
+
+const store18 = [
+  {
+    product: "Martin Guitar",
+    price: 3000
+  },
+  {
+    product: "TV",
+    price: 1000
+  },
+  {
+    product: "MacBook",
+    price: 5000
+  },
+  {
+    product: "iPhone",
+    price: 1000
+  },
+  {
+    product: "iPad",
+    price: 1000
+  },
+  {
+    product: "Apple Watch",
+    price: 500
+  },
+  {
+    product: "Air Relax",
+    price: 400
+  },
+  {
+    product: "Leather Jacket",
+    price: 500
+  },
+]
+
+const adding2 = () => {
+  let ac2 = 0;
+  for (let i = 0; i < store18.length; i++) {
+    ac2 += store18[i].price;
+  }
+  return ac2
+}
+
+adding2()
+
+
 
 
 // MOSH - Array from range
