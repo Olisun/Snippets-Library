@@ -470,6 +470,31 @@ fetch("https://reqres.in/api/users/", {
   .then(data => console.log(data))
   .catch(error => console.log("Error"))
 
+// Local Storage example.
+
+localStorage.setItem("dog", "Wiggly");
+var dog = localStorage.getItem("dog");
+document.getElementById("whatsInStorage").innerHTML = dog;
+
+// for objects, create first then use as part of a key-value-pair
+
+var myPet = {
+  type: "dog",
+  kind: "Wiggly",
+  action: function () {
+    console.log("Bark-Bark")
+  }
+}
+
+// To store object into local storage, must stringify first.
+
+localStorage.setItem("pet", JSON.stringify(myPet));
+
+// To get, must parse it back into an object. 
+
+var dog = JSON.parse(localStorage.getItem("pet"));
+document.getElementById("whatsInStorage").innerHTML = dog;
+
 
 
 

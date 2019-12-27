@@ -1,33 +1,33 @@
-// Code that readys the DOM for js and jQuery. Basically the main function for the program. ALL CODE goes in there!
+Code that readys the DOM for js and jQuery.Basically the main function for the program.ALL CODE goes in there!
 // $ is an alias for jQuery
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 });
 
 // To select HTML element and add css styling
 
-$(document).ready(function() {
+$(document).ready(function () {
   $('body').addClass('jQ-test')
 });
 
 // To select HTML element and remove css styling
 
-$(document).ready(function() {
+$(document).ready(function () {
   $('body').removeClass('jQ-test')
-    // You can select multiple classes and id's. Note - all the selectors go inside of ''. Can be even more selective with psuedo seletors (see learn jQuery)
+  // You can select multiple classes and id's. Note - all the selectors go inside of ''. Can be even more selective with psuedo seletors (see learn jQuery)
   $('h1, h2, #test1').addClass('jQ-test2')
 });
 
 // To get the value if the selector is a number:
 
-$(document).ready(function() {
+$(document).ready(function () {
   $(".number").value
 });
 
 // To display something from js to a specified selector in the DOM
 
-$(document).ready(function() {
+$(document).ready(function () {
   $("#selector").text(thingYouWantDisplayed[numberIfArrayString])
 });
 
@@ -40,16 +40,16 @@ $(document).ready(function() {
 // class="roastbeef" --> to grab class use $("#.roastbeef")
 
 
-$(document).ready(function() {
+$(document).ready(function () {
   var pbjCount = 0;
-  $("#pbj").click(function() {
+  $("#pbj").click(function () {
     alert("The paragraph was clicked.");
     pbjCount++
     alert(`PBJ Count: ${pbjCount}`)
   });
 
   var roastbeefCount = 0;
-  $("#roastbeef").click(function() {
+  $("#roastbeef").click(function () {
     alert("The paragraph2 was clicked.");
     roastbeefCount++
     alert(`Roastbeef Count: ${roastbeefCount}`)
@@ -59,8 +59,8 @@ $(document).ready(function() {
 // Button click to generate random number and append to the DOM
 // HTML id for button: id="random-button"
 // HTML id: id="random-number"
-$(document).ready(function() {
-  $("#random-button").click(function() {
+$(document).ready(function () {
+  $("#random-button").click(function () {
     var randomNumber = Math.floor(Math.random() * 1000) + 1;
     $("#random-number").text(randomNumber)
   });
@@ -80,8 +80,8 @@ $(document).ready(function() {
 // <h1>4</h1>
 // </button>
 
-$(document).ready(function() {
-  $(".btn-choice").on("click", function() {
+$(document).ready(function () {
+  $(".btn-choice").on("click", function () {
     console.log("You clicked a button!!");
     console.log(this);
     console.log($(this).text())
@@ -90,10 +90,10 @@ $(document).ready(function() {
 
 // See jQuery exercise 09 (number-checker). Creating a random # generater and comparing if that # is the same as the button the user clicked. User clicked mapped by using $(this).val()
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   // Here we create the on click event that gets the user's pick
-  $(".btn-choice").on("click", function() {
+  $(".btn-choice").on("click", function () {
 
     console.log("You clicked a button!!");
     console.log(this);
@@ -104,7 +104,7 @@ $(document).ready(function() {
 
     // Then determine which button was clicked
     var userClicked = $(this).val()
-      // Compare the computer and user guess
+    // Compare the computer and user guess
     if (parseInt(userClicked) === randomNumber) {
       alert('You guess properly')
     } else {
@@ -118,14 +118,14 @@ $(document).ready(function() {
 
 // For manipulating CSS and animate
 
-$(document).ready(function() {
+$(document).ready(function () {
   // When the textPink button is pressed...
-  $("#textPink").on("click", function() {
-      // Change funText to pink.
-      $("#funText").css("color", "pink")
-    })
-    // When the boxGrow button is clicked... 
-  $("#boxGrow").on("click", function() {
+  $("#textPink").on("click", function () {
+    // Change funText to pink.
+    $("#funText").css("color", "pink")
+  })
+  // When the boxGrow button is clicked... 
+  $("#boxGrow").on("click", function () {
     // Increase the size of the box.
     $("#box").animate({ height: "+=35px", width: "+=35px" }, "fast");
   })
@@ -175,23 +175,23 @@ var gameOver = 'GAME OVER';
 // Function to append 3 strings to the DOM in sequential order
 
 function helloWord() {
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').append(firstGreeting)
   }, 1000 * 1)
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').text('');
   }, 1000 * 2)
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').append(secondGreeting)
   }, 1000 * 3)
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').text('');
   }, 1000 * 4)
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#test1').append(thirdGreeting)
   }, 1000 * 5)
 }
@@ -201,7 +201,7 @@ helloWord();
 // Count down timer
 
 function countDown() {
-  var wiggly = setInterval(function() {
+  var wiggly = setInterval(function () {
     $('#test2').text(counter)
     counter--
     if (counter === 0) {
@@ -243,7 +243,7 @@ function clockFormatter(numToConvert) {
 
 var currentTimeDOM = $('#current-time-dom');
 
-var dynamicTime = function() {
+var dynamicTime = function () {
   var currentTime = moment();
   var currentTimeFormatted = moment(currentTime).format('HH:mm:ss');
   currentTimeDOM.text(currentTimeFormatted);
@@ -262,12 +262,12 @@ for (var i = 0; i < avengers.length; i++) {
 // API call with ajax.
 
 var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' +
-    marvel + '&api_key=xmYKYe1T4Bdfwx4bKef115frvMnBfph3&limit=10';
-  $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-    .then(function(response) {
-      console.log(queryURL);
-      console.log(response);
-      var results = response.data;
+  marvel + '&api_key=xmYKYe1T4Bdfwx4bKef115frvMnBfph3&limit=10';
+$.ajax({
+  url: queryURL,
+  method: "GET"
+})
+  .then(function (response) {
+    console.log(queryURL);
+    console.log(response);
+    var results = response.data;

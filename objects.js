@@ -1,3 +1,29 @@
+// Local Storage example.
+
+localStorage.setItem("dog", "Wiggly");
+var dog = localStorage.getItem("dog");
+document.getElementById("whatsInStorage").innerHTML = dog;
+
+// for objects, create first then use as part of a key-value-pair
+
+var myPet = {
+  type: "dog",
+  kind: "Wiggly",
+  action: function () {
+    console.log("Bark-Bark")
+  }
+}
+
+// To store object into local storage, must stringify first.
+
+localStorage.setItem("pet", JSON.stringify(myPet));
+
+// To get, must parse it back into an object. 
+
+var dog = JSON.parse(localStorage.getItem("pet"));
+document.getElementById("whatsInStorage").innerHTML = dog;
+
+
 // How to filter objects in array in JavaScript. 
 
 const friends = [
@@ -50,13 +76,13 @@ var customer = {
 
 // Step 1: Log the First Name below using console.log
 console.log(customer.firstName)
-  // Step 2: Log the Last Name below using console.log
+// Step 2: Log the Last Name below using console.log
 console.log(customer.lastName)
-  // Step 3: Log the State of the Address below using console.log
+// Step 3: Log the State of the Address below using console.log
 console.log(customer.address.state)
-  // Step 4: Log the Home Phone Number below using console.log
+// Step 4: Log the Home Phone Number below using console.log
 console.log(customer.phoneNumber[0].number)
-  // Step 5: Log the Fax Number below using console.log
+// Step 5: Log the Fax Number below using console.log
 console.log(customer.phoneNumber[0].number)
 
 // Example of .this in an object. 
@@ -66,7 +92,7 @@ const animal = {
   breed: 'labrador retreiver',
   kind: 'wiggly',
   age: 9,
-  fullAnimal: function() { // <-- No Arrow Function here sicne it's an object
+  fullAnimal: function () { // <-- No Arrow Function here sicne it's an object
     console.log(`I have a ${this.type} and she's a ${this.breed}. She's a ${this.kind} and she's ${this.age}`);
   },
 }
@@ -79,7 +105,7 @@ const person = {
   Name: 'Oliver Sun',
   Age: 47,
   Favorite_Animal: 'Wiggly',
-  Greeting: function() {
+  Greeting: function () {
     console.log('My name is ' + person.Name + ' and my favorite animal is ' + person.Favorite_Animal)
   },
 };
@@ -324,7 +350,7 @@ console.log(myFactoryFunction('Doggie', 'Lab', 'Wiggly', 'Wiggly')); // returns 
 function CreateDog(type, breed) {
   this.type = type;
   this.breed = breed;
-  this.action = function() {
+  this.action = function () {
     console.log('Bark')
   }
 };
@@ -524,7 +550,7 @@ console.log(team);
 // The simplest way to create an object is using an object literal 
 const circle = {
   radius: 1,
-  draw: function() {}
+  draw: function () { }
 };
 
 // To create multiple objects with the same structure and behaviuor (methods), use a factory or a constructor. 
@@ -533,14 +559,14 @@ const circle = {
 function createCircle(radius) {
   return {
     radius,
-    draw: function() {}
+    draw: function () { }
   }
 }
 
 // Constructor function 
 function Circle(radius) {
   this.radius = radius;
-  this.draw = function() {}
+  this.draw = function () { }
 }
 
 // Every object has a "constructor" property which returns the function that was used to construct or create that object. 
@@ -572,32 +598,32 @@ Object.keys(circle);
 // To see if an object has a given property
 if ('location' in circle)
 
-// Abstraction means hiding the complexity/details and showing only the essentials. 
-// We can hide the details by using private members. Replace "this" with "let". 
+  // Abstraction means hiding the complexity/details and showing only the essentials. 
+  // We can hide the details by using private members. Replace "this" with "let". 
 
-function Circle(radius) {
-  // Public member 
-  this.radius = radius;
+  function Circle(radius) {
+    // Public member 
+    this.radius = radius;
 
-  // Private member                       
-  let defaultLocation = {};
-}
+    // Private member                       
+    let defaultLocation = {};
+  }
 
 // To define a getter/setter, use Object.defineProperty():
 
 Object.defineProperty(this, 'defaultLocation', {
-  get: function() { return defaultLocation; },
-  set: function(value) { defaultLocation = value; }
+  get: function () { return defaultLocation; },
+  set: function (value) { defaultLocation = value; }
 });
 
 // Use mixins to combine multiple objects 
 // and implement composition in JavaScript. 
 const canEat = {
-  eat: function() {}
+  eat: function () { }
 };
 
 const canWalk = {
-  walk: function() {}
+  walk: function () { }
 };
 
 function mixin(target, ...sources) {
@@ -606,7 +632,7 @@ function mixin(target, ...sources) {
   Object.assign(target, ...sources);
 }
 
-function Person() {}
+function Person() { }
 
 mixin(Person.prototype, canEat, canWalk);
 // From Mosh - Prototypes:
@@ -645,10 +671,10 @@ Object.getPrototypeOf(x) === Object.getPrototypeOf(y); // returns true
 // When dealing with large number of objects, it's better to put their
 // methods on their prototype. This way, a single instance of the methods
 // will be in the memory. 
-Circle.prototype.draw = function() {}
+Circle.prototype.draw = function () { }
 
 // To get the own/instance properties:
 Object.keys(obj);
 
 // To get all the properties (own + prototype): 
-for (let key in obj) {}
+for (let key in obj) { }
