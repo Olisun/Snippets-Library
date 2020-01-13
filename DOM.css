@@ -514,3 +514,30 @@ body {
     opacity: 1;
   }
 }
+
+
+/* Targeting elements with attributes for styling */
+
+
+/* Example */
+
+
+/* <h1>Attribute presence and value selectors</h1>
+<ul>
+    <li>Item 1</li>
+    <li class="a">Item 2</li>
+    <li class="a b">Item 3</li>
+    <li class="ab">Item 4</li>
+</ul> */
+
+li[class] {
+  font-size: 200%;
+}
+
+li[class="a"] {
+  background-color: yellow;
+}
+
+li[class~="a"] {
+  color: red;
+}
