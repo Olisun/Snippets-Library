@@ -1,4 +1,24 @@
-Math Quiz
+// Switch Case
+
+switch (weatherCallsFor) {
+  case "Clear":   // Equivalent to if (weatherCallsFor === "Clear")
+    console.log("Looks to be a nice day!")
+    break;
+  case "Clouds":
+    console.log("At least it's not raining.")
+    break;
+  case "Rain":  // Equivalent to if (weatherCallsFor === "Rain")
+    console.log("Don't forget the umbrella.")
+    break;
+  case "Snow":
+    console.log("Better bundle up!")
+    break;
+  default:  // Equivalent to "else"
+    console.log("Roll the dice")
+    break;
+}
+
+// Math Quiz
 
 let score = 0;
 
